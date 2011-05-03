@@ -4,7 +4,7 @@ module ApplicationHelper
     unless @title
       base_title
     else
-      "#{base_title} | #{@title}" 
+      @title
     end   
   end
 end
