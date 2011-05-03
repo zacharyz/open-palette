@@ -21,6 +21,7 @@ gem 'sqlite3'
 # gem 'bj'
 # gem 'nokogiri'
 gem 'sqlite3-ruby','1.3.2', :require => 'sqlite3'
+gem 'gravatar_image_tag', '1.0.0.pre2'
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to
@@ -33,10 +34,17 @@ gem 'sqlite3-ruby','1.3.2', :require => 'sqlite3'
 group :development do
   gem 'rspec-rails', '2.5.0'
   gem 'annotate-models', '1.0.4'
+  gem 'ZenTest'
+  gem 'autotest'
+  gem 'autotest-rails-pure'
+  gem 'autotest-growl'            
+  gem 'autotest-fsevent'
 end
 
 group :test do
   gem 'rspec', '2.5.0'
   gem 'webrat', '0.7.1'
   gem 'spork', '0.9.0.rc5'
+  gem 'ZenTest'
+  gem 'factory_girl_rails', '1.0'  
 end
