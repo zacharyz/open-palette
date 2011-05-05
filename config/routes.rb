@@ -5,7 +5,7 @@ OpenPalette::Application.routes.draw do
   match '/help',    :to => 'pages#help'   
 
 
-  resources :microposts
+  resources :microposts, :only => [:create, :destroy]
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]

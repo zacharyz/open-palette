@@ -20,13 +20,16 @@ class User < ActiveRecord::Base
                          :length       => { :within => 6..40 }
   before_save :encrypt_password
                          
-	has_many :microposts
+	has_many :microposts, :dependent => :destroy
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :email, :presence   => true,
                     :format     => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
-                     
+  def feed
+    # This is preliminary. See Chapter 12 for the full implementation.
+    Micropost.where("user_id = ?", id)
+  end                   
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
   end
