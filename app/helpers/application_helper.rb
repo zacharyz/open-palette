@@ -1,10 +1,10 @@
 module ApplicationHelper
   def title
-    base_title = 'Open Palette'
+    @base_title = 'Open Palette'
     unless @title
-      base_title
+      @base_title
     else
-      @title
+      "#{@base_title} | #{@title}"
     end   
   end
   def logo
