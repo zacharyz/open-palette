@@ -1,16 +1,8 @@
-<tr>
-  <td class="micropost">
-    <span class="content"><%= micropost.content %></span>    
-    <span class="image"><%= image_tag(micropost.image, :alt => "image", :class => "round") %></span>
-    <span class="timestamp">
-      Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-    </span>
-  </td>
-  <% if current_user?(micropost.user) %>
-  <td>
-    <%= link_to "delete", micropost, :method => :delete,
-                                     :confirm => "You sure?",
-                                     :title => micropost.content %>
-  </td>
-  <% end %>
-</tr>
+<div class="post">    
+ <div class="post-image"><%= image_tag(micropost.image, :alt => "image", :class => "round") %></span>
+ <div class="post-content"><%= micropost.content %></span>
+ <span class="timestamp">
+   Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+ </span>
+</div>
+

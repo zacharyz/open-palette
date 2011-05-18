@@ -32,7 +32,7 @@ def make_microposts
     num = 0
     50.times do
       content = Faker::Lorem.sentence(5)
-      num = (num + 1) % 3
+      num = (num + 1) % 5
       image = "image#{num}.png"
       user.microposts.create!(:content => content,:image => image)
     end

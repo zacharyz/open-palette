@@ -1,5 +1,5 @@
-<header>
-  <nav class="round">
+<div id="header">
+  <div class="nav" class="round">
     <ul>
       <li><%= link_to "Home", root_path %></li>
       <% if signed_in? %>
@@ -14,5 +14,5 @@
       <li><%= link_to "Sign in", signin_path %></li>
       <% end %>
     </ul>
-  </nav>
-</header>
+  </div>
+</div>

@@ -1,16 +1,21 @@
 <% if signed_in? %>
-  
-  <table class="front" summary="For signed-in users">
-    <tr>
-      <td class="main">        
-        <%= render 'shared/feed' %>
-      </td>
-      <td class="sidebar round">
-        <%= render 'shared/user_info' %>
-        <%= render 'shared/stats' %>
-      </td>
-    </tr>
-  </table>
+<div id = "wrapper">
+   <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+   <% end %>
+   <div id = "wrap-inner">
+      <div id="content" class="group">
+         <div id="main">        
+           <%= render 'shared/feed' %>
+         </div>
+         <div id="sidebar">
+           <%= render 'shared/user_info' %>
+           <%= render 'shared/stats' %>
+         </div>                  
+      </div>
+   </div> 
+</div>
+ 
 <% else %>
   <h1>Open Palette</h1>
 
