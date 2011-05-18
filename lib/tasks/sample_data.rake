@@ -29,9 +29,12 @@ end
 
 def make_microposts
   User.all(:limit => 6).each do |user|
+    num = 0
     50.times do
       content = Faker::Lorem.sentence(5)
-      user.microposts.create!(:content => content)
+      num = (num + 1) % 3
+      image = "image#{num}.png"
+      user.microposts.create!(:content => content,:image => image)
     end
   end
 end

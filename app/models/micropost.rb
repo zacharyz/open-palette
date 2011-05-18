@@ -1,5 +1,5 @@
 class Micropost < ActiveRecord::Base
-  attr_accessible :content
+  attr_accessible :content,:image
   
   belongs_to :user
   

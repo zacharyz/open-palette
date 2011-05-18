@@ -140,7 +140,9 @@ td.sidebar {
   border: 1px solid #999;
   margin-bottom: -15px;
 }
-
+.microposts img.gravatar {
+	max-width: 18px;
+}
 .field_with_errors {
   margin-top: 10px;
   padding: 2px;
@@ -242,4 +244,8 @@ form.new_micropost {
 form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
+}  
+
+.micropost .image img{
+  max-width: 200px;
 }
