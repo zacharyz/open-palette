@@ -28,13 +28,14 @@ def make_users
 end
 
 def make_microposts
-  User.all(:limit => 6).each do |user|
+  User.all.each do |user|
     num = 0
-    50.times do
+    9.times do
+      title = Faker::Lorem.sentence(1)
       content = Faker::Lorem.sentence(5)
-      num = (num + 1) % 5
-      image = "image#{num}.png"
-      user.microposts.create!(:content => content,:image => image)
+      num = num + 1
+      image = "image#{num % 9}.png"
+      user.microposts.create!(:content => content,:image => image,:title=> title)
     end
   end
 end
