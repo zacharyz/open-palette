@@ -1,48 +1,48 @@
-class MicropostsController < ApplicationController 
+class PostsController < ApplicationController 
   before_filter :authenticate, :only => [:create, :destroy]
   before_filter :authorized_user, :only => :destroy
-  # GET /microposts
-  # GET /microposts.xml
+  # GET /posts
+  # GET /posts.xml
   def index
-    @microposts = Micropost.all
+    @posts = post.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @microposts }
+      format.xml  { render :xml => @posts }
     end
   end
 
-  # GET /microposts/1
-  # GET /microposts/1.xml
+  # GET /posts/1
+  # GET /posts/1.xml
   def show
-    @micropost = Micropost.find(params[:id])
+    @post = post.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @micropost }
+      format.xml  { render :xml => @post }
     end
   end
 
-  # GET /microposts/new
-  # GET /microposts/new.xml
+  # GET /posts/new
+  # GET /posts/new.xml
   def new
-    @micropost = Micropost.new
+    @post = post.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @micropost }
+      format.xml  { render :xml => @post }
     end
   end
 
-  # GET /microposts/1/edit
+  # GET /posts/1/edit
   def edit
-    @micropost = Micropost.find(params[:id])
+    @post = post.find(params[:id])
   end
 
   def create
-    @micropost = current_user.microposts.build(params[:micropost])
-    if @micropost.save
-      flash[:success] = "Micropost created!"
+    @post = current_user.posts.build(params[:post])
+    if @post.save
+      flash[:success] = "post created!"
       redirect_to root_path
     else
       @feed_items = []
@@ -50,31 +50,31 @@ class MicropostsController < ApplicationController
     end
   end
 
-  # PUT /microposts/1
-  # PUT /microposts/1.xml
+  # PUT /posts/1
+  # PUT /posts/1.xml
   def update
-    @micropost = Micropost.find(params[:id])
+    @post = post.find(params[:id])
 
     respond_to do |format|
-      if @micropost.update_attributes(params[:micropost])
-        format.html { redirect_to(@micropost, :notice => 'Micropost was successfully updated.') }
+      if @post.update_attributes(params[:post])
+        format.html { redirect_to(@post, :notice => 'post was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @micropost.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @micropost.destroy
+    @post.destroy
     redirect_back_or root_path
   end
 
   private
 
     def authorized_user
-      @micropost = Micropost.find(params[:id])
-      redirect_to root_path unless current_user?(@micropost.user)
+      @post = post.find(params[:id])
+      redirect_to root_path unless current_user?(@post.user)
     end
 end

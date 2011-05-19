@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
                          :length       => { :within => 6..40 }
   before_save :encrypt_password
                          
-	has_many :microposts, :dependent => :destroy
+	has_many :posts, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id",
                            :dependent => :destroy
   has_many :following, :through => :relationships, :source => :followed
@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
                     :uniqueness => { :case_sensitive => false }
                   
   def feed
-    Micropost.from_users_followed_by(self)
+    Post.from_users_followed_by(self)
   end
   
   def has_password?(submitted_password)

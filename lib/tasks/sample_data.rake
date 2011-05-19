@@ -5,7 +5,7 @@ namespace :db do
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
     make_users
-    make_microposts
+    make_posts
     make_relationships
   end
 end
@@ -27,7 +27,7 @@ def make_users
   end
 end
 
-def make_microposts
+def make_posts
   User.all.each do |user|
     num = 0
     9.times do
@@ -35,7 +35,7 @@ def make_microposts
       content = Faker::Lorem.sentence(5)
       num = num + 1
       image = "image#{num % 9}.png"
-      user.microposts.create!(:content => content,:image => image,:title=> title)
+      user.posts.create!(:content => content,:image => image,:title=> title)
     end
   end
 end

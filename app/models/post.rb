@@ -1,4 +1,4 @@
-class Micropost < ActiveRecord::Base
+class Post < ActiveRecord::Base
   attr_accessible :content,:image, :title
   
   belongs_to :user
@@ -6,9 +6,9 @@ class Micropost < ActiveRecord::Base
   validates :content, :presence => true, :length => { :maximum => 140 }
   validates :user_id, :presence => true
   
-  default_scope :order => 'microposts.created_at DESC'
+  default_scope :order => 'posts.created_at DESC'
 
-  # Return microposts from the users being followed by the given user.
+  # Return posts from the users being followed by the given user.
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
 
   private

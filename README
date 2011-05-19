@@ -6,9 +6,9 @@ database-backed web applications according to the Model-View-Control pattern.
 This pattern splits the view (also called the presentation) into "dumb"
 templates that are primarily responsible for inserting pre-built data in between
 HTML tags. The model contains the "smart" domain objects (such as Account,
-Product, Person, Post) that holds all the business logic and knows how to
+Product, Person, post) that holds all the business logic and knows how to
 persist themselves to a database. The controller handles the incoming requests
-(such as Save New Account, Update Product, Show Post) by manipulating the model
+(such as Save New Account, Update Product, Show post) by manipulating the model
 and directing data to the view.
 
 In Rails, the model is handled by what's called an object-relational mapping
@@ -91,7 +91,7 @@ mode. With gems, use <tt>sudo gem install ruby-debug</tt>. Example:
 
   class WeblogController < ActionController::Base
     def index
-      @posts = Post.find(:all)
+      @posts = post.find(:all)
       debugger
     end
   end
@@ -100,9 +100,9 @@ So the controller will accept the action, run the first line, then present you
 with a IRB prompt in the server window. Here you can do things like:
 
   >> @posts.inspect
-  => "[#<Post:0x14a6be8
+  => "[#<post:0x14a6be8
           @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>,
-       #<Post:0x14a6620
+       #<post:0x14a6620
           @attributes={"title"=>"Rails", "body"=>"Only ten..", "id"=>"2"}>]"
   >> @posts.first.title = "hello from a debugger"
   => "hello from a debugger"
@@ -110,7 +110,7 @@ with a IRB prompt in the server window. Here you can do things like:
 ...and even better, you can examine how your runtime objects actually work:
 
   >> f = @posts.first
-  => #<Post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
+  => #<post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
   >> f.
   Display all 152 possibilities? (y or n)
 
@@ -149,7 +149,7 @@ dbconsole</tt>. You would be connected to the database with the credentials
 defined in database.yml. Starting the script without arguments will connect you
 to the development database. Passing an argument will connect you to a different
 database, like <tt>rails dbconsole production</tt>. Currently works for MySQL,
-PostgreSQL and SQLite 3.
+postgreSQL and SQLite 3.
 
 == Description of Contents
 

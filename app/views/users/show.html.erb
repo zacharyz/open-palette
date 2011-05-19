@@ -7,22 +7,22 @@
               <%= @user.name %>
             </h1>
             <%= render 'follow_form' if signed_in? %>  
-            <% unless @user.microposts.empty? %>
+            <% unless @user.posts.empty? %>
              <div class="posts group" summary="User posts">
                
                <% @item_count = 0 %>
-                 <% for micropost in @microposts %>
+                 <% for post in @posts %>
                    <% @item_count = @item_count + 1 %>
-                   <%= render micropost %>
+                   <%= render post %>
                  <% end %>
              </div>
-             <%= will_paginate @microposts %>
+             <%= will_paginate @posts %>
            <% end %>
          </div>
          <div id="sidebar">
             <strong>Name</strong> <%= @user.name %><br />
               <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-              <strong>Microposts</strong> <%= @user.microposts.count %>
+              <strong>posts</strong> <%= @user.posts.count %>
               <%= render 'shared/stats' %>
          </div>                  
       </div>
