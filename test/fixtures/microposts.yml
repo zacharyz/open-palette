@@ -1,7 +1,7 @@
 # == Schema Information
 # Schema version: 20110502214350
 #
-# Table name: microposts
+# Table name: posts
 #
 #  id         :integer         not null, primary key
 #  content    :string(255)

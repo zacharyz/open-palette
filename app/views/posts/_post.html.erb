@@ -2,7 +2,8 @@
 <div class="post group third">
 <% else %>
 <div class="post group">
-<% end %>  
- <span class="image"><%= image_tag(post.image, :alt => "image", :class => "round") %></span>
+<% end %>   
+ <span class="image"><a href = "<%= post_path(post) %>">
+  <%= image_tag(post.image, :alt => post.title) %></a></span>
 </div>
 

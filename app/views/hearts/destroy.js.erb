@@ -1,0 +1,2 @@
+$("heart_form").update("<%= escape_javascript(render('users/heart')) %>")
+$("hearts").update('<%= "#{@post.hearts.count} hearts" %>')

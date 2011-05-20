@@ -28,7 +28,11 @@ class User < ActiveRecord::Base
   has_many :reverse_relationships, :foreign_key => "followed_id",
                                    :class_name => "Relationship",
                                    :dependent => :destroy
-  has_many :followers, :through => :reverse_relationships, :source => :follower
+  has_many :followers, :through => :reverse_relationships, :source => :follower   
+  
+  has_many :hearts, :foreign_key => "hearter_id",
+                           :dependent => :destroy
+  has_many :hearted, :through => :hearts, :source => :hearted
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -64,6 +68,19 @@ class User < ActiveRecord::Base
   def unfollow!(followed)
     relationships.find_by_followed_id(followed).destroy
   end
+  
+  def heart?(hearted)
+    hearts.find_by_hearted_id(hearted)
+  end
+
+  def heart!(hearted)
+    hearts.create!(:hearted_id => hearted.id)
+  end 
+  
+  def unheart!(hearted)
+    hearts.find_by_hearted_id(hearted).destroy
+  end                                 
+  
   private
 
     def encrypt_password

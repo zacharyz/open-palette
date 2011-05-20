@@ -60,6 +60,14 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(:page => params[:page])
     render 'show_follow'
   end
+  
+  def hearts
+    @title = "Hearts"
+    @user = User.find(params[:id])
+    @posts = @user.hearted.paginate(:page => params[:page])
+    render 'show_heart'
+  end                  
+  
   private
 
     

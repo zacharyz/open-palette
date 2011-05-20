@@ -259,4 +259,84 @@ form.new_post textarea {
 
 .post .image img{
   max-width: 200px;
+}  
+
+.post-title-section {
+	margin: 0 0 20px;
+	    padding: 0;
+	    width: 700px;
+		font-size: 0.9em;
+		    overflow: hidden;
+}        
+.post-title h1 {
+	font-size: 1.3em;
+    line-height: 1.5;
+    margin-bottom: 0px;
+	margin-left: 60px;
+	
+}  
+div.post-byline {
+	color: #999999;
+	    font-size: 13px;
+	    font-weight: normal;
+	    line-height: 1.4;
+	    margin-left: 60px;
+}
+span.post-dash, div.post-dash {
+    color: #999999;
+    float: left;
+    font-size: 12px;
+    margin: 2px 0 0;
+}
+div.post-title h2, div.post-title div.post-byline {
+    color: #999999;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-left: 60px;
+}    
+div.post-title div.post-byline span.post-byline-user {
+    float: left;
+}    
+.post-title a img {
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E5E5E5;
+    float: left;
+    margin: 0 8px 0 0;
+    padding: 4px;
+    vertical-align: middle;
+    width: 48px;
+}        
+div.full {
+    margin: 0 0 20px;
+    padding: 0;
+    width: 700px;
+}      
+span.sep {
+	margin: 0 2px;
+	color: #bbb;
+	text-shadow: none;
+}
+span.meta {
+	margin-left: 4px;
+	font-size: 11px;
+	color: #bbb;
+}     
+#post-image {
+   	background: url("/images/post-shadow-lg.png") no-repeat scroll right bottom transparent;
+    float: left;
+    padding: 0 0 15px;
+    width: 440px;
+}  
+#single {
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E5E5E5;
+    margin: 0;
+    min-height: 300px;
+    overflow: hidden;
+    padding: 20px;
+    width: 400px;
+} 
+#post-description {
+	float: left;
 }

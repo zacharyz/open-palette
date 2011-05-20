@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110519171900) do
+ActiveRecord::Schema.define(:version => 20110520193915) do
+
+  create_table "hearts", :force => true do |t|
+    t.integer  "hearter_id"
+    t.integer  "hearted_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hearts", ["hearted_id"], :name => "index_hearts_on_hearted_id"
+  add_index "hearts", ["hearter_id", "hearted_id"], :name => "index_hearts_on_hearter_id_and_hearted_id", :unique => true
+  add_index "hearts", ["hearter_id"], :name => "index_hearts_on_hearter_id"
 
   create_table "posts", :force => true do |t|
     t.string   "content"

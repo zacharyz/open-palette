@@ -1,6 +1,10 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content,:image, :title
-  
+  attr_accessible :content,:image, :title   
+                                     
+  has_many :hearts, :foreign_key => "hearted_id",
+                           :dependent => :destroy
+  has_many :hearters, :through => :hearts, :source => :hearter
+    
   belongs_to :user
   
   validates :content, :presence => true, :length => { :maximum => 140 }

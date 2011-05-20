@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -70,7 +70,13 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_back_or root_path
   end
-
+  
+  def hearts
+    @title = "Hearts"
+    @post = Post.find(params[:id])
+    @users = @post.hearters.paginate(:page => params[:page])
+    render 'show_heart'
+  end
   private
 
     def authorized_user
