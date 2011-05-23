@@ -7,6 +7,7 @@ namespace :db do
     make_users
     make_posts
     make_relationships
+    make_hearts
   end
 end
 
@@ -18,7 +19,7 @@ def make_users
   admin.toggle!(:admin)
   99.times do |n|
     name  = Faker::Name.name
-    email = "example-#{n+1}@railstutorial.org"
+    email = "example#{n+1}@zfighter.com"
     password  = "password"
     User.create!(:name => name,
                  :email => email,
@@ -47,4 +48,16 @@ def make_relationships
   followers = users[3..40]
   following.each { |followed| user.follow!(followed) }
   followers.each { |follower| follower.follow!(user) }
+end                                                  
+
+def make_hearts
+  users = User.all
+  posts = Post.all
+  user  = users.first
+  post = posts.first
+  hearters = users[1..50]
+  hearted = posts[3..50]     
+  
+  hearted.each { |hearted_post| user.heart!(hearted_post) }
+  hearters.each { |hearter| hearter.heart!(post)}
 end

@@ -6,6 +6,10 @@
       <div id="content" class="group">
          <div id="main">        
             <%= render :partial => 'post_title' %>
+            <%= render 'heart_form' if signed_in? %>
+            <div id="hearts" class="stat">
+               <%= pluralize(@post.hearts.count, "hearts") %>
+             </div>
             <div id = "post-image">
                <div id = "single">
                   <%= image_tag(@post.image, :alt=>@post.title) %>

@@ -1,5 +1,5 @@
-<%= form_for current_user.relationships.build(:hearted_id => @post.id),
+<%= form_for current_user.hearts.build(:hearted_id => @post.id),
              :remote => true do |f| %>
   <div><%= f.hidden_field :hearted_id %></div>
-  <div class="actions"><%= f.submit "Heart" %></div>
+  <div class="actions"><%= f.submit "Heart", :class=>"heart_submit" %></div>
 <% end %>

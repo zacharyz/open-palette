@@ -1,18 +1,23 @@
-<div id="header">
-  <div class="nav" class="round">
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <% if signed_in? %>
-      <li><%= link_to "Users", users_path %></li>
-      <li><%= link_to "Profile", current_user %></li>
-      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-      <% end %>
-      <li><%= link_to "Help", help_path %></li>
-      <% if signed_in? %>
-      <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-      <% else %>
-      <li><%= link_to "Sign in", signin_path %></li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+<header class="group"> 
+  <%= render 'shared/user_info' %>
+  
+  
+  <nav>    
+    <div id="controls">
+      <div class="buttons">
+         <% if signed_in? %>
+         <%= link_to raw("<span>Feed</span>"), root_path,:class=>"simplebutton active",:id=>"feed" %>
+         <%= link_to raw("<span>Users</span>"), users_path,:class=>"simplebutton",:id=>"users" %>
+         <%= link_to raw("<span>Hearts</span"), hearts_user_path(current_user),:class=>"simplebutton",:id=>"hearts" %>
+         <%= link_to raw("<span>Profile</span>"), current_user,:class=>"simplebutton",:id=>"profile" %> 
+         <%= link_to raw("<span>Settings</span>"), edit_user_path(current_user),:class=>"simplebutton",:id=>"settings" %>
+         <% end %>
+         <% if signed_in? %>
+         <%= link_to raw("<span>Sign out</span>"), signout_path, :method => :delete,:class=>"simplebutton noicon" %>
+         <% else %>
+         <%= link_to raw("<span>Sign in</span>"), signin_path,:class=>"simplebutton noicon" %>
+         <% end %>
+      </div>
+    </div>
+  </nav>
+</header>
