@@ -1,17 +1,28 @@
-<h1>Sign in</h1>
+<div id = "wrapper">   
+   <div id = "wrap-inner">
+      <div id="content" class="group">
+         <div id="main">        
+            <h1>Sign in</h1>
 
-<%= form_for(:session, :url => sessions_path) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign in" %>
-  </div>
-<% end %>
+            <%= form_for(:session, :url => sessions_path) do |f| %>
+              <div class="field">
+                <%= f.label :email %><br />
+                <%= f.text_field :email %>
+              </div>
+              <div class="field">
+                <%= f.label :password %><br />
+                <%= f.password_field :password %>
+              </div>
+              <div class="actions">
+                <%= f.submit "Sign in" %>
+              </div>
+            <% end %>
 
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+            <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+         </div>
+         <div id="sidebar">
+            
+         </div>                  
+      </div>
+   </div> 
+</div>

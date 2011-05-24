@@ -32,11 +32,12 @@
          <% else %>
             <%= link_to raw("<span>Settings</span>"), edit_user_path(current_user),:class=>"simplebutton",:id=>"settings" %>
          <% end %>
+          
+         <% end %>
          <% if signed_in? %>
             <%= link_to raw("<span>Sign out</span>"), signout_path, :method => :delete,:class=>"simplebutton noicon" %>
          <% else %>
             <%= link_to raw("<span>Sign in</span>"), signin_path,:class=>"simplebutton noicon" %>
-         <% end %> 
          <% end %>
       </div>
     </div>
