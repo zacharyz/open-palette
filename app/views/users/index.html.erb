@@ -1,9 +1,33 @@
-<h1>All users</h1>
+<div id = "wrapper">   
+   <div id = "wrap-inner">
+      <div id="content" class="group">
+         <div id="main">        
+            <% unless @users.empty? %>
+              <table class="data user-table">
+                 <tbody>
+                  <tr> 
+                     <th class="list-title">name</th>
+                     <th></th>
+                     <th class="num">posts</th>
+                     <th class="num">hearts</th>
+                     <th class="num">following</th>
+                     <th class="num">followers</th>
+                     <th></th>
+                  </tr>
+                  <% for user in @users %>
+                     <%= render :partial=> 'shared/table_user', :locals => { :table_user => user }  %>
+                  <% end %>
+                 </tbody>
+                 
+              </table>   
+              <%= will_paginate @users %>
+              
+            <% end %>
+         </div>
+         <div id="sidebar">
+            
+         </div>                  
+      </div>
+   </div> 
+</div>
 
-<%= will_paginate %>
-
-<ul class="users">
-  <%= render @users %>
-</ul>
-
-<%= will_paginate %>

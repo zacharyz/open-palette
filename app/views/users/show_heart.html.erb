@@ -2,10 +2,7 @@
    <div id = "wrap-inner">
       <div id="content" class="group">
          <div id="main">        
-            <h1>
-              <%= gravatar_for @user %>
-              <%= @user.name %>
-            </h1>            
+            
             <% unless @user.hearts.empty? %>
              <div class="posts group" summary="User posts">
                
@@ -19,10 +16,7 @@
            <% end %>
          </div>
          <div id="sidebar">
-            <strong>Name</strong> <%= @user.name %><br />
-              <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-              <strong>posts</strong> <%= @user.posts.count %>
-              <%= render 'shared/stats' %>
+            
          </div>                  
       </div>
    </div> 

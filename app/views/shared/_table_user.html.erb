@@ -1,0 +1,39 @@
+<tr>
+   <td class="user">
+      <%= gravatar_for table_user, :size => 30 %>
+      <%= link_to table_user.name, table_user %>
+   </td>
+   <td></td>
+   <td class="num posts">
+      <%= link_to table_user.posts.count, table_user %>
+   </td>
+   <td class="num hearts">
+      <%= link_to table_user.hearts.count, hearts_user_path(table_user) %>
+   </td>
+   <td class="num follows">
+      <%= link_to table_user.following.count, following_user_path(table_user) %>
+   </td>
+   <td class="num followers">
+      <%= link_to table_user.followers.count, followers_user_path(table_user) %>
+   </td>    
+   <td class="follow">
+      <% unless current_user?(table_user) %>
+        <% if current_user.following?(table_user) %>
+          <%= form_for current_user.relationships.find_by_followed_id(table_user),
+                       :html => { :method => :delete },
+                       :remote => true do |f| %>
+            <div class="actions"><%= f.submit "Unfollow" %></div>
+          <% end %>
+          
+        <% else %>
+          <%= form_for current_user.relationships.build(:followed_id => table_user.id),
+                       :remote => true do |f| %>
+            <div><%= f.hidden_field :followed_id %></div>
+            <div class="actions"><%= f.submit "Follow" %></div>
+          <% end %>
+          
+        <% end %>
+      <% end %>
+   </td>
+   
+</tr>

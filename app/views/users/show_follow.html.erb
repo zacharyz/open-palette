@@ -1,25 +1,32 @@
-<table summary="Information about following/followers">
-  <tr>
-    <td class="main">
-      <h1><%= @title %></h1>
-      
-      <% unless @users.empty? %>
-        <ul class="users">
-          <%= render @users %>
-        </ul>
-        <%= will_paginate @users %>
-      <% end %>
-    </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-      <strong>Posts</strong> <%= @user.posts.count %>
-      <%= render 'shared/stats' %>
-      <% unless @users.empty? %>
-        <% @users.each do |user| %>
-          <%= link_to gravatar_for(user, :size => 30), user %>
-        <% end %>
-      <% end %>
-    </td>
-  </tr>
-</table>
+<div id = "wrapper">   
+   <div id = "wrap-inner">
+      <div id="content" class="group">
+         <div id="main">        
+            <% unless @users.empty? %>
+              <table class="data user-table">
+                 <tbody>
+                  <tr> 
+                     <th class="list-title">following</th>
+                     <th></th>
+                     <th class="num">posts</th>
+                     <th class="num">hearts</th>
+                     <th class="num">following</th>
+                     <th class="num">followers</th>
+                     <th></th>
+                  </tr>
+                  <% for user in @users %>
+                     <%= render :partial=> 'shared/table_user', :locals => { :table_user => user }  %>
+                  <% end %>
+                 </tbody>
+                 
+              </table>   
+              <%= will_paginate @users %>
+              
+            <% end %>
+         </div>
+         <div id="sidebar">
+            
+         </div>                  
+      </div>
+   </div> 
+</div>

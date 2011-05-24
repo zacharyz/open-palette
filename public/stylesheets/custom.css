@@ -20,25 +20,52 @@ header {
 	-webkit-transition:all 0.3s; 
 }
 
+header a, header a:visited, header a:hover {
+	color: white;
+	text-decoration: none;	
+}
+
 header .user_info {
-	float: left; 
-	position: relative; 
+	float: left;        
 	z-index: 99; 
 	margin: 10px 20px; 
 }
 
-header #user_image {
-	float: left;        
-	position: relative; 
+.user_info .buttons {
+    font-size: 11px;
+    font-weight: bold;
+    left: 69px;
+    position: absolute;
+    top: 32px;
+    width: 300px;
 }
+
+
+.user_info .buttons { position: absolute; top: 32px; left: 69px; font-size: 11px; font-weight: bold; width: 300px;}
+.user_info .buttons a { float: left; padding: 6px 0px 6px 0px; margin-right: 10px; color: rgba(255,255,255,0.3); text-shadow: rgba(0,0,0,0.56) 0 -1px 0; font-family: Arial, Helvetica, "Helvetica Neue", Geneva, sans-serif; }
+.user_info .buttons a strong { color: rgba(255,255,255,0.5); }
+.user_info .buttons a:hover { color: rgba(255,255,255,0.5); text-shadow: none; border-bottom: 3px solid rgba(255,255,255,0.05); }
+.user_info .buttons a:hover strong { color: #eee; }
+.user_info .buttons a.active { border-bottom: 3px solid rgba(255,255,255,0.1); color: #eee; }
+header #user_image {
+    background-size: 40px 40px;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    height: 40px;
+    margin-right: 10px;
+    width: 40px;
+}                   
 header .stats {
-  	float: left;        
-position: relative; 
+  	float: right;        
 }           
 header .user_name {
-  	float: left;    
-position: relative; 
-}           
+  	float: right;    
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 25px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
+}
+                    
 
 section {
   margin-top: 1em;
@@ -54,7 +81,7 @@ section h1 {
 /* Links */
 
 a {
-	color: rgba(255, 255, 255, 0.8);
+	color: #000;
 	outline: medium none;
 	text-decoration: none;
 }
@@ -436,4 +463,173 @@ input.unheart_submit {
 #image a:hover #image_details .unhearted  {
 	background: url("/images/icon-hearts.gif") no-repeat scroll 0 -17px transparent;
 	}                           
-	
+
+table.data {
+	width: 100%;
+	margin: 0 0 25px 0;
+	padding: 0;
+	border-collapse: collapse;
+	}
+table.data th, table.data td {
+	margin: 0;
+	padding: 10px;
+	vertical-align: top;
+	border-bottom: 1px solid #ddd;
+	}
+table.data td.user {
+	white-space: nowrap;
+	}
+table.data td.num {
+	text-align: right;
+	}
+table.data th.num {
+	text-align: right;
+	}
+table.data td.date {
+	font-size: .9em;
+	color: #777;
+	}
+table.data td.follow div.follow-prompt {
+	float: right;
+	font-size: .9em;
+	line-height: 12px;
+	margin: 0;
+	}
+table.data td.follow div.follow-prompt form {
+	margin: 0;
+	padding: 0;
+	}
+table.data td.follow a.follow,
+table.data td.follow a.following {
+	float: right;
+	padding: 6px;
+	width: 12px;
+	height: 12px;
+	margin-right: 0;
+	}
+table.data td.follow a.follow span,
+table.data td.follow a.following span {
+	float: left;
+	padding-left: 12px;
+	text-indent: -999em;
+	}
+table.data td.draft a.draft,
+table.data td.draft span.draft-pending {
+	float: none;
+	margin: 0 10px 0 0;
+	font-size: .8em;
+	}
+table.data tr:last-child th, table.data tr:last-child td {
+	border-bottom: none;
+	}
+table.data th {
+	padding: 0 10px 5px 10px;
+	text-align: left;
+	}
+table.data h4.vcard {
+	font-size: 1em;
+	line-height: 1.2;
+	margin-bottom: 0;
+	}
+table.data h4.vcard img {
+	width: 24px;
+	}
+table.data h4.vcard span.user-meta {
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-size: .75em;
+	font-weight: normal;
+	line-height: 1.5;
+	color: #999;
+	}	
+table.data td blockquote {
+	margin-left: 0;
+	}
+table.data td a.action {
+	font-size: .9em;
+	}
+table.data td em.meta {
+	display: block;
+	font-size: .9em;
+	line-height: 1.4;
+	font-style: normal;
+	color: #999;
+	}
+table.users-table tr:hover {
+	background: #fff;
+	background: rgba(255,255,255,.5);
+	}
+table.users-table tr:last-child td {
+	border: none;
+	}
+table.users-table td.num {
+	font-size: 1em;
+	color: #777;
+	}
+table.users-table td.num strong {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+	}
+table.users-table td.num a {
+	padding: 5px 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #fff;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	}
+table.users-table td.num a:hover {
+	color: #fff;
+	text-shadow: none;
+	background: #ea4c88 url(/images/glass-light.png) repeat-x 0 50%;
+	}
+table.users-table td.num em {
+	font-size: .7em;
+	font-weight: normal;
+	font-style: normal;
+	color: #777;
+	}
+table.users-table th {
+	padding: 8px 20px;
+	font-size: .8em;
+	line-height: 1.2;
+	font-weight: normal;
+	color: #999;
+	border-color: #fff;
+	background: url(/images/table-header-fade.png) repeat-x 0 100%;
+	}
+table.users-table th.list-title {
+	padding-left: 10px;
+	}
+table.users-table td {
+	vertical-align: middle;
+	}
+table.pixel-table th,
+table.pixel-table td {
+	padding: 6px 0;
+	font-size: .8em;
+	color: #777;
+	}
+table.pixel-table td {
+	padding-left: 8px;
+	color: #333;
+	}
+table.pixel-table tr.grouped th,
+table.pixel-table tr.grouped td {
+	padding-bottom: 0;
+	border-bottom: none;
+	}
+table.users-table td.passed {
+	padding-right: 34px;
+	background: url(/images/icon-pass.png) no-repeat 100% 50%;
+	}
+table.users-table td.scored {
+	padding-right: 34px;
+	background: url(/images/icon-pass-rev.png) no-repeat 100% 50%;
+	}
+table.users-table td a.follow,
+table.users-table td a.following {
+	mar
