@@ -1,21 +1,42 @@
 <header class="group"> 
-  <%= render 'shared/user_info' %>
-  
-  
+  <%= render 'shared/user_info' %> 
   <nav>    
     <div id="controls">
       <div class="buttons">
          <% if signed_in? %>
-         <%= link_to raw("<span>Feed</span>"), root_path,:class=>"simplebutton active",:id=>"feed" %>
-         <%= link_to raw("<span>Users</span>"), users_path,:class=>"simplebutton",:id=>"users" %>
-         <%= link_to raw("<span>Hearts</span"), hearts_user_path(current_user),:class=>"simplebutton",:id=>"hearts" %>
-         <%= link_to raw("<span>Profile</span>"), current_user,:class=>"simplebutton",:id=>"profile" %> 
-         <%= link_to raw("<span>Settings</span>"), edit_user_path(current_user),:class=>"simplebutton",:id=>"settings" %>
+         <% @current_controller = params[:controller]%>
+         <% @current_action = params[:action]%>
+         <% @current_id = params[:id]%> 
+         <% if @current_controller == "pages" && @current_action = "home" %>
+            <%= link_to raw("<span>Feed</span>"), root_path,:class=>"simplebutton active",:id=>"feed" %>
+         <% else %>
+            <%= link_to raw("<span>Feed</span>"), root_path,:class=>"simplebutton",:id=>"feed" %>
+         <% end %>
+         <% if @current_controller == "users" && @current_action == "index" %>
+            <%= link_to raw("<span>Users</span>"), users_path,:class=>"simplebutton active",:id=>"users" %>
+         <% else %>
+            <%= link_to raw("<span>Users</span>"), users_path,:class=>"simplebutton",:id=>"users" %>
+         <% end %>   
+         <% if @current_controller == "users" && @current_action == "hearts"  && @current_id == current_user.id.to_s %>
+            <%= link_to raw("<span>Hearts</span"), hearts_user_path(current_user),:class=>"simplebutton active",:id=>"hearts" %>
+         <% else %> 
+            <%= link_to raw("<span>Hearts</span"), hearts_user_path(current_user),:class=>"simplebutton",:id=>"hearts" %>
+         <% end %>
+         <% if @current_controller == "users" && @current_action == "show"  && @current_id == current_user.id.to_s %>
+            <%= link_to raw("<span>Profile</span>"), current_user,:class=>"simplebutton active",:id=>"profile" %>        
+         <% else %> 
+            <%= link_to raw("<span>Profile</span>"), current_user,:class=>"simplebutton",:id=>"profile" %>        
+         <% end %>
+         <% if @current_controller == "users" && @current_action == "edit" && @current_id == current_user.id.to_s %>
+            <%= link_to raw("<span>Settings</span>"), edit_user_path(current_user),:class=>"simplebutton active",:id=>"settings" %>
+         <% else %>
+            <%= link_to raw("<span>Settings</span>"), edit_user_path(current_user),:class=>"simplebutton",:id=>"settings" %>
          <% end %>
          <% if signed_in? %>
-         <%= link_to raw("<span>Sign out</span>"), signout_path, :method => :delete,:class=>"simplebutton noicon" %>
+            <%= link_to raw("<span>Sign out</span>"), signout_path, :method => :delete,:class=>"simplebutton noicon" %>
          <% else %>
-         <%= link_to raw("<span>Sign in</span>"), signin_path,:class=>"simplebutton noicon" %>
+            <%= link_to raw("<span>Sign in</span>"), signin_path,:class=>"simplebutton noicon" %>
+         <% end %> 
          <% end %>
       </div>
     </div>
