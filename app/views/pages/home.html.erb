@@ -1,41 +1,9 @@
 <% if signed_in? %>
-<div id = "wrapper">
-   <% flash.each do |key, value| %>
-      <div class="flash <%= key %>"><%= value %></div>
-   <% end %>
-   <div id = "wrap-inner">
-      <div id="content" class="group">
-         <div id="main">        
-           <%= render 'shared/feed' %>
-         </div>
-         <div id="sidebar">           
-         </div>                  
-      </div>
-   </div> 
-</div>
- 
+   <%= render 'shared/feed' %>
 <% else %>
-<div id = "wrapper">
-   <% flash.each do |key, value| %>
-      <div class="flash <%= key %>"><%= value %></div>
-   <% end %>
-   <div id = "wrap-inner">
-      <div id="content" class="group">
-         <div id="main">        
-            <h1>Open Palette</h1>
-
-              <p>
-                 The beginning of Open Palette!
-              </p>
-
-              <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
-         </div>
-         <div id="sidebar">           
-         </div>                  
-      </div>
-   </div> 
-</div>
-  
+   <h1>Open Palette</h1>
+   <p>The beginning of Open Palette!</p>
+   <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 <% end %>
 
 

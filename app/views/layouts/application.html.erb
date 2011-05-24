@@ -8,7 +8,21 @@
   </head>
   <body>
       <%= render 'layouts/header' %>
-      <%= yield %>
+      <div id = "wrapper">         
+         <div id = "wrap-inner">
+            <% flash.each do |key, value| %>
+                 <div class="flash <%= key %>"><%= value %></div>
+            <% end %>
+            <div id="content" class="group">
+               <div id="main">        
+                  <%= yield %>
+               </div>
+               <div id="sidebar">
+
+               </div>                  
+            </div>
+         </div> 
+      </div>      
       <%= render 'layouts/footer' %>
   </body>
   

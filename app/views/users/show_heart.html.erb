@@ -1,23 +1,11 @@
-<div id = "wrapper">   
-   <div id = "wrap-inner">
-      <div id="content" class="group">
-         <div id="main">        
-            
-            <% unless @user.hearts.empty? %>
-             <div class="posts group" summary="User posts">
-               
-               <% @item_count = 0 %>
-                 <% for post in @posts %>
-                   <% @item_count = @item_count + 1 %>
-                   <%= render :partial => "shared/feed_item", :locals => { :feed_item => post} %>
-                 <% end %>
-             </div>
-             <%= will_paginate @posts %>
-           <% end %>
-         </div>
-         <div id="sidebar">
-            
-         </div>                  
-      </div>
-   </div> 
-</div>
+<% unless @user.hearts.empty? %>
+ <div class="posts group" summary="User posts">
+   
+   <% @item_count = 0 %>
+     <% for post in @posts %>
+       <% @item_count = @item_count + 1 %>
+       <%= render :partial => "shared/feed_item", :locals => { :feed_item => post} %>
+     <% end %>
+ </div>
+ <%= will_paginate @posts %>
+<% end %>
