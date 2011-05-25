@@ -41,8 +41,8 @@ header .user_info {
 }
 
 
-.user_info .buttons { position: absolute; top: 28px; left: 69px; font-size: 11px; font-weight: bold; width: 300px;}
-.user_info .buttons a { float: left; padding: 6px 0px 6px 0px; margin-right: 10px; color: rgba(255,255,255,0.3); text-shadow: rgba(0,0,0,0.56) 0 -1px 0; font-family: Arial, Helvetica, "Helvetica Neue", Geneva, sans-serif; }
+.user_info .buttons { position: absolute; top: 31px; left: 69px; font-size: 11px; font-weight: bold; width: 300px;}
+.user_info .buttons a { float: left; padding: 6px 0px 3px 0px; margin-right: 10px; color: rgba(255,255,255,0.3); text-shadow: rgba(0,0,0,0.56) 0 -1px 0; font-family: Arial, Helvetica, "Helvetica Neue", Geneva, sans-serif; }
 .user_info .buttons a strong { color: rgba(255,255,255,0.5); }
 .user_info .buttons a:hover { color: rgba(255,255,255,0.5); text-shadow: none; border-bottom: 3px solid rgba(255,255,255,0.05); }
 .user_info .buttons a:hover strong { color: #eee; }
@@ -116,10 +116,8 @@ nav {
 #controls .buttons a:first-of-type { border-radius:5px 0 0 5px; }
 #controls .buttons a:last-of-type { border-radius:0 5px 5px 0; border-right: 1px solid rgba(0,0,0,0.7); }
 #controls .buttons a.noicon span { background: none; padding: 0 16px; }
-#controls .buttons a span { background: url(/images/nav.png) no-repeat -278px 5px; display: block; padding: 0 14px 0 30px; }
+#controls .buttons a span { display: block; padding: 0 15px 0 15px; }
 #controls .buttons a.active span { background-position: -278px -79px; color: #eee; text-shadow: #111 0 1px; }
-#controls #feed span { background-position: 7px 5px; }
-#controls #feed.active span { background-position: 7px -79px; }
 #controls #profile span { background-position: -136px 5px; }
 #controls #profile.active span { background-position: -136px -79px; }
 #controls #hearts span { background-position: -495px 5px; }
