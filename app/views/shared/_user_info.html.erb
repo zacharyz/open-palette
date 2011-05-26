@@ -1,6 +1,5 @@
 <% @user ||= current_user %>
-<% if @user %>
-<% if @user.id %>
+<% if @user && @user.id %>
 <div class="user_info group">
   <div id ="user_image">     
      <a href="<%= user_path(@user) %>"><%= gravatar_for @user, :size => 40 %></a>     
@@ -9,6 +8,5 @@
   <%= render 'shared/stats' %> 
 </div>   
 <% end %>
-
-<% end %>
+                          
 
