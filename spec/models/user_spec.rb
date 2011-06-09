@@ -119,12 +119,12 @@ describe User do
       @user.should be_admin
     end
   end
-  describe "micropost associations" do
+  describe "post associations" do
 
     before(:each) do
       @user = User.create(@attr)
-      @mp1 = Factory(:micropost, :user => @user, :created_at => 1.day.ago)
-      @mp2 = Factory(:micropost, :user => @user, :created_at => 1.hour.ago)
+      @mp1 = Factory(:post, :user => @user, :created_at => 1.day.ago)
+      @mp2 = Factory(:post, :user => @user, :created_at => 1.hour.ago)
     end
     
     describe "status feed" do
@@ -133,35 +133,35 @@ describe User do
         @user.should respond_to(:feed)
       end
 
-      it "should include the user's microposts" do
+      it "should include the user's posts" do
         @user.feed.should include(@mp1)
         @user.feed.should include(@mp2)
       end
 
-      it "should not include a different user's microposts" do
-        mp3 = Factory(:micropost,
+      it "should not include a different user's posts" do
+        mp3 = Factory(:post,
                       :user => Factory(:user, :email => Factory.next(:email)))
         @user.feed.should_not include(mp3)
       end
 
-      it "should include the microposts of followed users" do
+      it "should include the posts of followed users" do
         followed = Factory(:user, :email => Factory.next(:email))
-        mp3 = Factory(:micropost, :user => followed)
+        mp3 = Factory(:post, :user => followed)
         @user.follow!(followed)
         @user.feed.should include(mp3)
       end
     end
-    it "should have a microposts attribute" do
-      @user.should respond_to(:microposts)
+    it "should have a posts attribute" do
+      @user.should respond_to(:posts)
     end
 
-    it "should have the right microposts in the right order" do
-      @user.microposts.should == [@mp2, @mp1]
+    it "should have the right posts in the right order" do
+      @user.posts.should == [@mp2, @mp1]
     end
-    it "should destroy associated microposts" do
+    it "should destroy associated posts" do
       @user.destroy
-      [@mp1, @mp2].each do |micropost|
-        Micropost.find_by_id(micropost.id).should be_nil
+      [@mp1, @mp2].each do |post|
+        post.find_by_id(post.id).should be_nil
       end
     end
     

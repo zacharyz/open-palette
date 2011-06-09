@@ -35,7 +35,7 @@ def make_posts
       title = Faker::Lorem.sentence(1)
       content = Faker::Lorem.sentence(5)
       num = num + 1
-      image = "image#{num % 9}.png"
+      image = "image#{num % 9}.jpg"
       user.posts.create!(:content => content,:image => image,:title=> title)
     end
   end

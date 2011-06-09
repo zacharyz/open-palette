@@ -3,17 +3,19 @@
 <% else %>
 <div class="post group">
 <% end %>   
- <div id="image" class="group round">
-    <a href = "<%= post_path(post) %>">
-       <%= image_tag(post.image, :alt=> post.title,:class=>"round_top")%>
-    
+ <div id="image" class="group">
+        
     <div id="image_details" class="round_bottom">
+        <div class="left">              
+              <span id="title"><%= link_to post.title, post_path(post) %></span>
+        </div>
        <% if current_user && current_user.heart?(post) %>
-       <span id="hearts" class="hearted"><%= post.hearts.count %></span>
+       <span id="hearts" class="hearted right"><%= post.hearts.count %></span>
        <% else %>
-       <span id="hearts" class="unhearted"><%= post.hearts.count %></span>
+       <span id="hearts" class="unhearted right"><%= post.hearts.count %></span>
        <% end %>
-    </div> 
+    </div>
+    <%= link_to image_tag(post.image, :alt=> post.title),post_path(post)  %> 
     </a>
   </div>
 </div>

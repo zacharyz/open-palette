@@ -3,21 +3,23 @@
 <% else %>
 <div class="post group">
 <% end %>               
-    <div id="image" class="group round">
-      <a href = "<%= post_path(feed_item) %>">
-         <%= image_tag(feed_item.image, :alt=> feed_item.title,:class=>"round_top")%>
+    <div id="image" class="group"> 
+      <div id="image_details">
+          <div class="left">
+                <span id="avatar"><%= link_to gravatar_for(feed_item.user), feed_item.user %></span>
+                <span id="title"><%= link_to feed_item.title, post_path(feed_item) %></span>
+                <span id="author"><%= link_to feed_item.user.name, feed_item.user %></span>                 
+          </div>
+          <% if current_user.heart?(feed_item) %>
+          <div id="hearts" class="hearted right"><%= feed_item.hearts.count %></div>
+          <% else %>
+          <div id="hearts" class="unhearted right"><%= feed_item.hearts.count %></div>
+          <% end %>
+       </div>
+      <%= link_to image_tag(feed_item.image, :alt=> feed_item.title),post_path(feed_item)  %>
       
-      <div id="image_details" class="round_bottom">
-         <% if current_user.heart?(feed_item) %>
-         <span id="hearts" class="hearted"><%= feed_item.hearts.count %></span>
-         <% else %>
-         <span id="hearts" class="unhearted"><%= feed_item.hearts.count %></span>
-         <% end %>
-      </div> 
-      </a>
+       
+
     </div>
-    <div class="gravatar">
-         <%= link_to gravatar_for(feed_item.user), feed_item.user %>
-         <%= link_to feed_item.user.name, feed_item.user %>
-     </div>
+    
 </div>

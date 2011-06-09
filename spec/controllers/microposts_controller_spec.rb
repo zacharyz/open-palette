@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MicropostsController do
+describe postsController do
   render_views
   
   describe "access control" do
@@ -27,14 +27,14 @@ describe MicropostsController do
         @attr = { :content => "" }
       end
 
-      it "should not create a micropost" do
+      it "should not create a post" do
         lambda do
-          post :create, :micropost => @attr
-        end.should_not change(Micropost, :count)
+          post :create, :post => @attr
+        end.should_not change(post, :count)
       end
 
       it "should render the home page" do
-        post :create, :micropost => @attr
+        post :create, :post => @attr
         response.should render_template('pages/home')
       end
     end
@@ -45,20 +45,20 @@ describe MicropostsController do
         @attr = { :content => "Lorem ipsum" }
       end
 
-      it "should create a micropost" do
+      it "should create a post" do
         lambda do
-          post :create, :micropost => @attr
-        end.should change(Micropost, :count).by(1)
+          post :create, :post => @attr
+        end.should change(post, :count).by(1)
       end
 
       it "should redirect to the home page" do
-        post :create, :micropost => @attr
+        post :create, :post => @attr
         response.should redirect_to(root_path)
       end
 
       it "should have a flash message" do
-        post :create, :micropost => @attr
-        flash[:success].should =~ /micropost created/i
+        post :create, :post => @attr
+        flash[:success].should =~ /post created/i
       end
     end
   end
@@ -70,11 +70,11 @@ describe MicropostsController do
         @user = Factory(:user)
         wrong_user = Factory(:user, :email => Factory.next(:email))
         test_sign_in(wrong_user)
-        @micropost = Factory(:micropost, :user => @user)
+        @post = Factory(:post, :user => @user)
       end
 
       it "should deny access" do
-        delete :destroy, :id => @micropost
+        delete :destroy, :id => @post
         response.should redirect_to(root_path)
       end
     end
@@ -83,13 +83,13 @@ describe MicropostsController do
 
       before(:each) do
         @user = test_sign_in(Factory(:user))
-        @micropost = Factory(:micropost, :user => @user)
+        @post = Factory(:post, :user => @user)
       end
 
-      it "should destroy the micropost" do
+      it "should destroy the post" do
         lambda do 
-          delete :destroy, :id => @micropost
-        end.should change(Micropost, :count).by(-1)
+          delete :destroy, :id => @post
+        end.should change(post, :count).by(-1)
       end
     end
   end
