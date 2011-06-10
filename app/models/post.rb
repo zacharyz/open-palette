@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content,:image, :title   
+  attr_accessible :content,:image, :title, :remote_image_url   
                                      
   has_many :hearts, :foreign_key => "hearted_id",
                            :dependent => :destroy
@@ -14,7 +14,8 @@ class Post < ActiveRecord::Base
 
   # Return posts from the users being followed by the given user.
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
-
+  
+  mount_uploader :image, ImageUploader
   private
 
     # Return an SQL condition for users followed by the given user.

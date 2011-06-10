@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = post.all
+    @posts = Post.all.paginate(:page => params[:page],:per_page => 18) 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.xml
   def new
-    @post = post.new
+    @post = Post.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.xml
   def update
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -80,7 +80,7 @@ class PostsController < ApplicationController
   private
 
     def authorized_user
-      @post = post.find(params[:id])
+      @post = Post.find(params[:id])
       redirect_to root_path unless current_user?(@post.user)
     end
 end

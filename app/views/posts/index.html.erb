@@ -1,26 +1,12 @@
-<h1>Listing Posts</h1>
-
-<table>
-  <tr>
-    <th>Content</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= image_tag(post.image, :alt => post.title) %></td>
-    <td><%= post.content %></td>
-    <td><%= post.user_id %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% unless @posts.empty? %>
+ <div class="posts group" summary="User posts">
+   <% @item_count = 0 %>
+     <% for post in @posts %>
+       <% @item_count = @item_count + 1 %>
+       <%= render post %>
+     <% end %>
+ </div>
+ <%= will_paginate @posts %>
+<% else %>
+ <p>no posts!</p>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New post', new_post_path %>

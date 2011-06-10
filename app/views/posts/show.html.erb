@@ -5,7 +5,7 @@
  </div>
 <div id = "post-image">
    <div id = "single">
-      <%= image_tag(@post.image, :alt=>@post.title) %>
+      <%= image_tag(@post.image_url.to_s, :alt=>@post.title) %>
    </div>  
 </div>
 <div id = "post-description"><%= @post.content %></div>

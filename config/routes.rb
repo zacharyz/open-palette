@@ -12,7 +12,7 @@ OpenPalette::Application.routes.draw do
   end
   
   resources :sessions,      :only => [:new, :create, :destroy]
-  resources :posts,    :only => [:create, :destroy, :show]
+  resources :posts #,    :only => [:create, :destroy, :show,:edit,:new]
   resources :relationships, :only => [:create, :destroy]
   resources :hearts, :only => [:create, :destroy]  
   match '/signup',  :to => 'users#new'

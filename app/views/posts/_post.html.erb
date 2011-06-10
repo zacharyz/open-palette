@@ -5,7 +5,7 @@
 <% end %>   
  <div id="image" class="group">
         
-    <div id="image_details" class="round_bottom">
+    <div id="image_details">
         <div class="left">              
               <span id="title"><%= link_to post.title, post_path(post) %></span>
         </div>
@@ -15,7 +15,7 @@
        <span id="hearts" class="unhearted right"><%= post.hearts.count %></span>
        <% end %>
     </div>
-    <%= link_to image_tag(post.image, :alt=> post.title),post_path(post)  %> 
+    <%= link_to image_tag(post.image_url(:thumb).to_s, :alt=> post.title),post_path(post)  %> 
     </a>
   </div>
 </div>
