@@ -7,8 +7,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  #storage :file
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -23,9 +23,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   process :resize_to_limit => [900, 900]    
-  process :convert => 'png'
+  process :convert => 'jpg'
   def filename
-    super + '.png'
+    super + '.jpg'
   end
   #
   # def scale(width, height)

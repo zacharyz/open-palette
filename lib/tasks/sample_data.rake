@@ -5,9 +5,9 @@ namespace :db do
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
     make_users
-    make_posts
+    #make_posts
     make_relationships
-    make_hearts
+    #make_hearts
   end
 end
 
