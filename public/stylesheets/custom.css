@@ -25,28 +25,14 @@ header a, header a:visited, header a:hover {
 	text-decoration: none;	
 }
 
-header .user_info {
-	float: left;        
-	z-index: 99; 
-	margin: 10px 20px; 
-}
 
-.user_info .buttons {
+.user_info {
+	float: left;
     font-size: 11px;
     font-weight: bold;
-    left: 69px;
-    position: absolute;
-    top: 32px;
-    width: 300px;
 }
 
-
-.user_info .buttons { position: absolute; top: 31px; left: 69px; font-size: 11px; font-weight: bold; width: 300px;}
-.user_info .buttons a { float: left; padding: 6px 0px 3px 0px; margin-right: 10px; color: rgba(255,255,255,0.3); text-shadow: rgba(0,0,0,0.56) 0 -1px 0; font-family: Arial, Helvetica, "Helvetica Neue", Geneva, sans-serif; }
-.user_info .buttons a strong { color: rgba(255,255,255,0.5); }
-.user_info .buttons a:hover { color: rgba(255,255,255,0.5); text-shadow: none; border-bottom: 3px solid rgba(255,255,255,0.05); }
-.user_info .buttons a:hover strong { color: #eee; }
-.user_info .buttons a.active { border-bottom: 3px solid rgba(255,255,255,0.1); color: #eee; }
+   
 header #user_image {
     background-size: 40px 40px;
     border-radius: 5px 5px 5px 5px;
@@ -166,9 +152,8 @@ a.signup_button {
 #wrap-inner {
 	    padding: 25px 30px;
 }
-footer { 
-	position: fixed; 
-	color: #eee;
+footer { 	
+	color: #000;
 	bottom: 0px; 
 	background: rgba(0,0,0,0.8); 
 	font-size: 11px; 
@@ -392,18 +377,20 @@ span.meta {
 	color: #bbb;
 }     
 #post-image {
-   	background: url("/images/post-shadow-lg.png") no-repeat scroll right bottom transparent;
-    float: left;
-    padding: 0 0 15px;
+   	margin: 0 0 20px;
+    text-align: center;
+    width: 900px;
+    z-index: 999;
 }  
-#single {
-	background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #E5E5E5;
-    margin: 0;  
-    overflow: hidden;
-    padding: 20px;
+
+#post-image img {
+
+    border: 1px solid #FFFFFF;
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
     max-width: 900px;
-} 
+    position: relative;
+    z-index: 103;
+}
 #post-description {
 	float: left;
 }

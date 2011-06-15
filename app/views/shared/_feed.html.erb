@@ -1,10 +1,15 @@
-<% unless @feed_items.empty? %>
-  <div class="posts group" summary="User posts">
-     <% @item_count = 0 %>
-     <% for feed_item in @feed_items %>
-       <% @item_count = @item_count + 1 %>
-       <%= render :partial => "shared/feed_item", :locals => { :feed_item => feed_item,:item_count => @item_count } %>
-     <% end %>                                 
-  </div>
-  <%= will_paginate @feed_items %>
-<% end %>
+<div id="main">   
+   <% unless @feed_items.empty? %>
+     <div class="posts group" summary="User posts">
+        <% @item_count = 0 %>
+        <% for feed_item in @feed_items %>
+          <% @item_count = @item_count + 1 %>
+          <%= render :partial => "shared/feed_item", :locals => { :feed_item => feed_item,:item_count => @item_count } %>
+        <% end %>                                 
+     </div>
+     <%= will_paginate @feed_items %>
+   <% end %>
+</div>
+<div id="sidebar">
+
+</div>

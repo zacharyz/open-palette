@@ -1,11 +1,16 @@
-<%= render :partial => 'post_title' %>
-<%= render 'heart_form' if signed_in? %>
-<div id="hearts" class="stat">
-   <%= pluralize(@post.hearts.count, "hearts") %>
- </div>
-<div id = "post-image">
-   <div id = "single">
+<div id="main">        
+   <%= render :partial => 'post_title' %>
+   <%= render 'heart_form' if signed_in? %>
+   <div id="hearts" class="stat">
+      <%= pluralize(@post.hearts.count, "hearts") %>
+    </div>
+   <div id = "post-image">
+
       <%= image_tag(@post.image_url.to_s, :alt=>@post.title) %>
-   </div>  
+
+   </div>
+   <div id = "post-description"><%= @post.content %></div>
 </div>
-<div id = "post-description"><%= @post.content %></div>
+<div id="sidebar">
+
+</div>
