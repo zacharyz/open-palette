@@ -4,9 +4,10 @@
 <div class="post group">
 <% end %>               
     <div id="image" class="group"> 
+      <span id="avatar"><%= link_to gravatar_for(feed_item.user), feed_item.user %></span>
       <div id="image_details">
           <div class="left">
-                <span id="avatar"><%= link_to gravatar_for(feed_item.user), feed_item.user %></span>
+                
                 <span id="title"><%= link_to feed_item.title, post_path(feed_item) %></span>
                 <span id="author"><%= link_to feed_item.user.name, feed_item.user %></span>                 
           </div>

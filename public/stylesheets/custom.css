@@ -99,11 +99,21 @@ nav {
 .simplebutton:hover { background: -webkit-gradient(linear, 0% 0%, 0% 100%, to(rgba(255,255,255,0.02)), from(rgba(255,255,255,0.09))); background: -moz-linear-gradient(0% 100% 90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.09)); }
 .simplebutton:active, a.simplebutton.active { -webkit-box-shadow: rgba(255,255,255,0.15) 0 1px 1px, rgba(0,0,0,0.7) 0 2px 10px inset; -moz-box-shadow: rgba(255,255,255,0.15) 0 1px 0px, rgba(0,0,0,0.7) 0 2px 10px inset; }
 
+#post-button { float: left; position: relative; }
+#post-button .buttons { float: right; margin: 17px 20px; }             
+#post-button .buttons a { float: left; color: rgba(0,0,0,0.6); text-decoration: none; height: 25px; text-align: center; border-right-style: none; font: bold 13px/25px Arial, Helvetica, "Helvetica Neue", Geneva, sans-serif; text-shadow: rgba(255,254,255,0.10) 0 1px 0; }
+#post-button .buttons a:first-of-type { border-radius:5px 0 0 5px; }
+#post-button .buttons a:last-of-type { border-radius:5px 5px 5px 5px; border-right: 1px solid rgba(0,0,0,0.7); } 
+#post-button .buttons a.noicon span { background: none; padding: 0 16px; } 
+#post-button .buttons a span { display: block; padding: 0 15px 0 15px; }
+#post-button .buttons a.active span { background-position: -278px -79px; color: #eee; text-shadow: #111 0 1px; } 
+
 #controls .buttons a:first-of-type { border-radius:5px 0 0 5px; }
 #controls .buttons a:last-of-type { border-radius:0 5px 5px 0; border-right: 1px solid rgba(0,0,0,0.7); }
 #controls .buttons a.noicon span { background: none; padding: 0 16px; }
 #controls .buttons a span { display: block; padding: 0 15px 0 15px; }
 #controls .buttons a.active span { background-position: -278px -79px; color: #eee; text-shadow: #111 0 1px; }
+
 #controls #profile span { background-position: -136px 5px; }
 #controls #profile.active span { background-position: -136px -79px; }
 #controls #hearts span { background-position: -495px 5px; }
@@ -269,7 +279,7 @@ h1.post {
     position: relative;
     width: 280px;
 	float: left;
-    margin: 0 12px 30px 0;
+    margin: 0 12px 12px 0;
     padding: 0;
 } 
 .post #image {
@@ -281,13 +291,9 @@ h1.post {
 }
 .post .gravatar {	
 	color: #999999;
-    font-size: 12px;
-    font-weight: normal;
-    line-height: 1.4em;
     margin: 0;
-    max-height: 34px;
-    padding: 0 0 0 10px;
-    vertical-align: middle;
+	border-bottom: 12px solid #F0F0F0;
+	border-right: 12px solid #F0F0F0;
 }              
 .posts img.gravatar {
 	max-width: 18px;
@@ -448,14 +454,20 @@ input.unheart_submit {
 } 
 #image a:hover #image_details .unhearted  {
 	background: url("/images/icon-hearts.gif") no-repeat scroll 0 -17px transparent;
-	}                           
+	} 
+	                          
+#image #avatar {  
+	float: left;
+	position: absolute;
+	top: 0;
+}
 #image_details .left {
 	margin: 10px 0 0 10px;
 	color: #FFFFFF;
     font-size: 16px;
 	width: 220px;
 }
-#image_details #author, #image_details #avatar, #image_details #title {
+#image_details #author,#image_details #title {
 	float: left;
 }                       
 

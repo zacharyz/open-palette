@@ -1,5 +1,19 @@
 <header class="group">    
   <nav>    
+    <div id="post-button">
+       <div class="buttons">
+          <% if signed_in? %>
+          <% @current_controller = params[:controller]%>
+          <% @current_action = params[:action]%>
+          <% @current_id = params[:id]%>
+          <% if @current_controller == "posts" && @current_action = "new" %>
+            <%= link_to raw("<span>Post</span>"), new_post_path,:class=>"simplebutton active",:id=>"post" %>
+          <% else %>
+            <%= link_to raw("<span>Post</span>"), new_post_path,:class=>"simplebutton",:id=>"post" %>
+          <% end %>
+          <% end %>
+       </div>
+    </div>
     <div id="controls">
       <div class="buttons">
          <% if signed_in? %>
