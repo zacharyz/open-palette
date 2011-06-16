@@ -4,10 +4,11 @@
 <div class="post group">
 <% end %>   
  <div id="image" class="group">
-        
+    <span id="avatar"><%= link_to gravatar_for(post.user), post.user %></span>    
     <div id="image_details">
         <div class="left">              
               <span id="title"><%= link_to post.title, post_path(post) %></span>
+              <span id="author"><%= link_to post.user.name, post.user %></span>
         </div>
        <% if current_user && current_user.heart?(post) %>
        <span id="hearts" class="hearted right"><%= post.hearts.count %></span>

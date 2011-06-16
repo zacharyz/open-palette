@@ -1,12 +1,17 @@
-<% unless @posts.empty? %>
- <div class="posts group" summary="User posts">
-   <% @item_count = 0 %>
-     <% for post in @posts %>
-       <% @item_count = @item_count + 1 %>
-       <%= render post %>
-     <% end %>
- </div>
- <%= will_paginate @posts %>
-<% else %>
- <p>no posts!</p>
-<% end %>
+<div id="main">      
+   <% unless @posts.empty? %>
+    <div class="posts group" summary="User posts">
+      <% @item_count = 0 %>
+        <% for post in @posts %>
+          <% @item_count = @item_count + 1 %>
+          <%= render post %>
+        <% end %>
+    </div>
+    <%= will_paginate @posts %>
+   <% else %>
+    <p>no posts!</p>
+   <% end %>
+</div>
+<div id="sidebar">
+
+</div>

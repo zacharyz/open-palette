@@ -292,8 +292,8 @@ h1.post {
 .post .gravatar {	
 	color: #999999;
     margin: 0;
-	border-bottom: 12px solid #F0F0F0;
-	border-right: 12px solid #F0F0F0;
+	border-bottom: 5px solid #F0F0F0;
+	border-right: 5px solid #F0F0F0;
 }              
 .posts img.gravatar {
 	max-width: 18px;
