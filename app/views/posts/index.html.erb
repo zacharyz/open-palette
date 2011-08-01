@@ -7,7 +7,7 @@
           <%= render post %>
         <% end %>
     </div>
-    <%= will_paginate @posts %>
+    <%= paginate @posts %>
    <% else %>
     <p>no posts!</p>
    <% end %>

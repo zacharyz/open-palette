@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.1.0.rc4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,9 +22,12 @@ gem 'sqlite3'
 # gem 'nokogiri'
 gem 'sqlite3-ruby','1.3.2', :require => 'sqlite3'
 gem 'gravatar_image_tag', '1.0.0.pre2'
-gem 'will_paginate', '3.0.pre2' 
+#gem 'will_paginate', '3.0.pre2' 
+gem 'kaminari'
 gem 'faker', '0.3.1'
 # gem 'aws-s3', :require => 'aws/s3'
+
+gem 'simplegeo'
 
 gem 'fog'
 gem 'rmagick'  
@@ -54,4 +57,20 @@ group :test do
   gem 'spork', '0.9.0.rc5'
   gem 'ZenTest'
   gem 'factory_girl_rails', '1.0'  
+end
+
+# Rails 3.1 - Asset Pipeline
+gem 'json'
+gem 'sass'
+gem 'coffee-script'
+gem 'uglifier'
+# Rails 3.1 - JavaScript
+gem 'jquery-rails'
+
+gem 'haml'
+
+# Rails 3.1 - Heroku
+group :production do
+  gem 'therubyracer-heroku', '~> 0.8.1.pre3'
+  gem 'pg'
 end

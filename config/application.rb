@@ -39,5 +39,8 @@ module OpenPalette
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     
+    # Enable the asset pipeline
+    config.assets.enabled = true
+    SimpleGeo::Client.set_credentials('Prhfx4xKNBYnxLnaersACEKEtusVZNmp', 'hMu2vMCcGC4Z67QEwq8DpgMm5fEDLcvq')
   end
 end

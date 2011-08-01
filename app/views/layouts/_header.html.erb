@@ -6,7 +6,7 @@
           <% @current_controller = params[:controller]%>
           <% @current_action = params[:action]%>
           <% @current_id = params[:id]%>
-          <% if @current_controller == "posts" && @current_action = "new" %>
+          <% if @current_controller == "posts" && @current_action == "new" %>
             <%= link_to raw("<span>Post</span>"), new_post_path,:class=>"simplebutton active",:id=>"post" %>
           <% else %>
             <%= link_to raw("<span>Post</span>"), new_post_path,:class=>"simplebutton",:id=>"post" %>
@@ -20,7 +20,7 @@
          <% @current_controller = params[:controller]%>
          <% @current_action = params[:action]%>
          <% @current_id = params[:id]%> 
-         <% if @current_controller == "pages" && @current_action = "home" %>
+         <% if @current_controller == "pages" && @current_action == "home" %>
             <%= link_to raw("<span>Feed</span>"), root_path,:class=>"simplebutton active",:id=>"feed" %>
          <% else %>
             <%= link_to raw("<span>Feed</span>"), root_path,:class=>"simplebutton",:id=>"feed" %>

@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all.paginate(:page => params[:page],:per_page => 18) 
+    #@posts = Post.all.paginate(:page => params[:page],:per_page => 18) 
+    @posts = Post.order("name").page(params[:page]).per(18)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -74,7 +75,8 @@ class PostsController < ApplicationController
   def hearts
     @title = "Hearts"
     @post = Post.find(params[:id])
-    @users = @post.hearters.paginate(:page => params[:page])
+    #@users = @post.hearters.paginate(:page => params[:page])
+    @users = @post.hearters.page(params[:page])
     render 'show_heart'
   end
   private

@@ -7,7 +7,7 @@
           <%= render :partial => "shared/feed_item", :locals => { :feed_item => feed_item,:item_count => @item_count } %>
         <% end %>                                 
      </div>
-     <%= will_paginate @feed_items %>
+     <%= paginate @feed_items %>
    <% end %>
 </div>
 <div id="sidebar">

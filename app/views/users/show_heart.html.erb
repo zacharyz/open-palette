@@ -7,5 +7,5 @@
        <%= render :partial => "shared/feed_item", :locals => { :feed_item => post} %>
      <% end %>
  </div>
- <%= will_paginate @posts %>
+ <%= paginate @posts %>
 <% end %>

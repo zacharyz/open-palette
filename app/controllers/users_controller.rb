@@ -5,12 +5,14 @@ class UsersController < ApplicationController
   
   def index
     @title = "All users"
-    @users = User.paginate(:page => params[:page])
+    #@users = User.paginate(:page => params[:page])
+    @users = User.page(params[:page])  
   end
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.paginate(:page => params[:page])
+    #@posts = @user.posts.paginate(:page => params[:page])  
+    @posts = @user.posts.page(params[:page])  
     @title = @user.name
   end
   def edit
@@ -50,21 +52,24 @@ class UsersController < ApplicationController
   def following
     @title = "Following"
     @user = User.find(params[:id])
-    @users = @user.following.paginate(:page => params[:page])
+    #@users = @user.following.paginate(:page => params[:page])
+    @users = @user.following.page(params[:page])
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
     @user = User.find(params[:id])
-    @users = @user.followers.paginate(:page => params[:page])
+    #@users = @user.followers.paginate(:page => params[:page]) 
+    @users = @user.followers.page(params[:page])
     render 'show_follow'
   end
   
   def hearts
     @title = "Hearts"
     @user = User.find(params[:id])
-    @posts = @user.hearted.paginate(:page => params[:page])
+    #@posts = @user.hearted.paginate(:page => params[:page])
+    @posts = @user.hearted.page(params[:page])
     render 'show_heart'
   end                  
   
