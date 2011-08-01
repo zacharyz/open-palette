@@ -270,7 +270,7 @@ h1.post {
 }
 
 .post {
-	background: url("/images/loader.gif") no-repeat scroll center center #D6D6D6;
+	background: url("/assets/loader.gif") no-repeat scroll center center #D6D6D6;
     border-bottom: 1px solid #FFFFFF;
     float: left;
 	min-height: 280px;
@@ -405,18 +405,18 @@ span.meta {
 }   
 input.heart_submit {
 	border: none;
-   	background: url("/images/icon-hearts.gif") no-repeat scroll 0 0 transparent;
+   	background: url("/assets/icon-hearts.gif") no-repeat scroll 0 0 transparent;
 	padding-left: 15px;	
 }
 input.heart_submit:hover {
 	border: none;
-	background: url("/images/icon-hearts.gif") no-repeat 0 -17px;  
+	background: url("/assets/icon-hearts.gif") no-repeat 0 -17px;  
 	padding-left: 15px;
     color: #3333;
 } 
 input.unheart_submit {                                         
 	border: none;
-	background: url("/images/icon-hearts.gif") no-repeat 0 -34px; 
+	background: url("/assets/icon-hearts.gif") no-repeat 0 -34px; 
 	padding-left: 15px;   
 	
 }
@@ -425,7 +425,7 @@ input.unheart_submit {
 }              
 
 #image_details {
-    background: url("/images/photo_thumb_bg.png") repeat scroll 0 0 transparent;
+    background: url("/assets/photo_thumb_bg.png") repeat scroll 0 0 transparent;
     bottom: 0;
     color: #FFFFFF;
     height: 52px;
@@ -437,7 +437,7 @@ input.unheart_submit {
 	float: left;
 }
 #image_details .hearted {
-	background: url("/images/icon-hearts.gif") no-repeat scroll 0 -34px transparent;
+	background: url("/assets/icon-hearts.gif") no-repeat scroll 0 -34px transparent;
 	float: right;
 	padding-left: 15px;
 	height: 16px;
@@ -445,7 +445,7 @@ input.unheart_submit {
 	
 }                                                                      
 #image_details .unhearted {
-	background: url("/images/icon-hearts.gif") no-repeat scroll 0 -0px transparent;
+	background: url("/assets/icon-hearts.gif") no-repeat scroll 0 -0px transparent;
 	float: right;
 	padding-left: 15px;
 	height: 16px;
@@ -453,7 +453,7 @@ input.unheart_submit {
 	
 } 
 #image a:hover #image_details .unhearted  {
-	background: url("/images/icon-hearts.gif") no-repeat scroll 0 -17px transparent;
+	background: url("/assets/icon-hearts.gif") no-repeat scroll 0 -17px transparent;
 	} 
 	                          
 #image #avatar {  
@@ -618,7 +618,7 @@ table.users-table td.num a {
 table.users-table td.num a:hover {
 	color: #fff;
 	text-shadow: none;
-	background: #ea4c88 url(/images/glass-light.png) repeat-x 0 50%;
+	background: #ea4c88 url(/assets/glass-light.png) repeat-x 0 50%;
 	}
 table.users-table td.num em {
 	font-size: .7em;
@@ -633,7 +633,7 @@ table.users-table th {
 	font-weight: normal;
 	color: #999;
 	border-color: #fff;
-	background: url(/images/table-header-fade.png) repeat-x 0 100%;
+	background: url(/assets/table-header-fade.png) repeat-x 0 100%;
 	}
 table.users-table th.list-title {
 	padding-left: 10px;
@@ -658,9 +658,9 @@ table.pixel-table tr.grouped td {
 	}
 table.users-table td.passed {
 	padding-right: 34px;
-	background: url(/images/icon-pass.png) no-repeat 100% 50%;
+	background: url(/assets/icon-pass.png) no-repeat 100% 50%;
 	}
 table.users-table td.scored {
 	padding-right: 34px;
-	background: url(/images/icon-pass-rev.png) no-repeat 100% 50%;
+	background: url(/assets/icon-pass-rev.png) no-repeat 100% 50%;
 	}
