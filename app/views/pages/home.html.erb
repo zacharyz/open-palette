@@ -1,9 +1,7 @@
 <% if signed_in? %>
    <%= render 'shared/feed' %>
 <% else %>
-   <h1>Open Palette</h1>
-   <p>The beginning of Open Palette!</p>
-   <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+   <%= render 'shared/feed' %>
 <% end %>
 
 

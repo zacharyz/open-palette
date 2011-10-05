@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
+gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -27,7 +27,7 @@ gem 'kaminari'
 gem 'faker', '0.3.1'
 # gem 'aws-s3', :require => 'aws/s3'
 
-gem 'simplegeo'
+#gem 'simplegeo'
 
 gem 'fog'
 gem 'rmagick'  
@@ -42,12 +42,12 @@ gem 'carrierwave'
 
 group :development do
   gem 'rspec-rails', '2.5.0'
-  gem 'annotate-models', '1.0.4'
-  gem 'ZenTest'
-  gem 'autotest'
-  gem 'autotest-rails-pure'
-  gem 'autotest-growl'            
-  gem 'autotest-fsevent'
+  #gem 'annotate-models', '1.0.4'
+  #gem 'ZenTest'
+  #gem 'autotest'
+  #gem 'autotest-rails-pure'
+  #gem 'autotest-growl'            
+  #gem 'autotest-fsevent'
   
 end
 
@@ -55,7 +55,7 @@ group :test do
   gem 'rspec', '2.5.0'
   gem 'webrat', '0.7.1'
   gem 'spork', '0.9.0.rc5'
-  gem 'ZenTest'
+  #gem 'ZenTest'
   gem 'factory_girl_rails', '1.0'  
 end
 

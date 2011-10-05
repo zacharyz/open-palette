@@ -8,21 +8,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(function () {  
-	alert('huh');
-});  
-  
-function updateComments() {  
-  //$.getScript('/artwalk.js?lat=' + position.coords.latitude + "&long=" + position.coords.longitude);
-  $.getScript('/artwalk.js');
-  setTimeout(updateComments, 1000);  
-}
-function updatePlaces(position) { 
-	 
-  $.getScript('/artwalk.js?lat=' + position.coords.latitude + "&long=" + position.coords.longitude);
-}                       
-                    
-
 function error(msg) {
  var s = document.querySelector('#status');
  s.innerHTML = typeof msg == 'string' ? msg : "failed";

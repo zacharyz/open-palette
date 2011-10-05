@@ -40,7 +40,6 @@ module OpenPalette
     config.filter_parameters += [:password]
     
     # Enable the asset pipeline
-    config.assets.enabled = true
-    SimpleGeo::Client.set_credentials('Prhfx4xKNBYnxLnaersACEKEtusVZNmp', 'hMu2vMCcGC4Z67QEwq8DpgMm5fEDLcvq')
+    config.assets.enabled = true\
   end
 end
