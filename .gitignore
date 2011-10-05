@@ -10,3 +10,5 @@ doc/
 .DS_Store
 public/uploads/
 uploads/
+.sass-cache/
+config/database.yml

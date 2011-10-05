@@ -59,12 +59,14 @@ group :test do
   gem 'factory_girl_rails', '1.0'  
 end
 
-# Rails 3.1 - Asset Pipeline
+group :assets do
+  gem 'sass-rails', '~> 3.1.0'
+  gem 'coffee-rails', '~> 3.1.0'
+  gem 'uglifier'
+end
+
 gem 'json'
-gem 'sass'
-gem 'coffee-script'
-gem 'uglifier'
-# Rails 3.1 - JavaScript
+
 gem 'jquery-rails'
 
 gem 'haml'
