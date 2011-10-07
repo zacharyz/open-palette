@@ -1,0 +1,12 @@
+!!! Strict                                
+%html
+  %head
+    %title 
+      = title
+    = csrf_meta_tag
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+  %body
+    = render 'layouts/header'
+    .container-fluid
+      = yield

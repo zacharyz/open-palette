@@ -1,0 +1,20 @@
+.sidebar
+  .well
+    %h5 Sidebar
+    %ul
+      %li <a href="#">Link</a>
+    %h5 Sidebar
+    %ul
+      %li <a href="#">Link</a>
+.content
+  
+  .row 
+    .span16
+      - unless @feed_items.empty?
+        %ul.media-grid
+          - @item_count = 0
+          - for feed_item in @feed_items
+            - @item_count = @item_count + 1
+            = render :partial => "shared/feed_item", :locals => { :feed_item => feed_item,:item_count => @item_count }
+        = paginate @feed_items
+  = render 'layouts/footer'

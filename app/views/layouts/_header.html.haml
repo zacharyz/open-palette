@@ -1,0 +1,48 @@
+%header.topbar
+  .topbar-inner
+    .container-fluid
+      %a.brand Open Palette
+      - @current_controller = params[:controller]
+      - @current_action = params[:action]
+      - @current_id = params[:id]
+      %ul.nav
+        - if signed_in?
+          - if @current_controller == "pages" && @current_action == "home"
+            %li.active
+              = link_to 'Feed', root_path
+          - else
+            %li
+              = link_to 'Feed', root_path
+          - if @current_controller == "users" && @current_action == "index"
+            %li.active
+              = link_to 'Users', users_path
+          - else
+            %li
+              = link_to 'Users', users_path
+          - if @current_controller == "users" && @current_action == "hearts"  && @current_id == current_user.id.to_s 
+            %li.active
+              = link_to 'Hearts', hearts_user_path(current_user)
+          - else
+            %li
+              = link_to 'Hearts', hearts_user_path(current_user)
+          - if @current_controller == "users" && @current_action == "show"  && @current_id == current_user.id.to_s
+            %li.active
+              = link_to 'Profile', current_user
+          - else    
+            %li
+              = link_to 'Profile', current_user
+          - if @current_controller == "users" && @current_action == "edit" && @current_id == current_user.id.to_s
+            %li.active
+              = link_to 'Settings', edit_user_path(current_user)
+          - else
+            %li
+              = link_to 'Settings', edit_user_path(current_user)
+          - if signed_in?
+            %li 
+              = link_to 'Post', new_post_path
+      %p.pull-right
+        - if signed_in?
+          = link_to raw("<span>Sign out</span>"), signout_path, :method => :delete
+        - else
+          = link_to raw("<span>Sign in</span>"), signin_path
+        
