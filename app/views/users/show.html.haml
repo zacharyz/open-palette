@@ -1,0 +1,19 @@
+.container-fluid
+  .sidebar
+    .well
+      %h5 Sidebar
+      %ul
+        %li <a href="#">Link</a>
+      %h5 Sidebar
+      %ul
+        %li <a href="#">Link</a>
+  .content   
+    .row 
+      .span16
+        - unless @user.posts.empty?
+          %ul.media-grid
+            - for post in @posts
+              = render post
+          = paginate @posts
+    = render 'layouts/footer'
+    

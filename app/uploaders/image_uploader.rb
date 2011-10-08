@@ -26,7 +26,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_limit => [900, 900]    
+  process :resize_to_limit => [940, 940]    
   process :convert => 'jpg'
   def filename
     super + '.jpg'
@@ -38,7 +38,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-     process :resize_to_fill => [290, 290]
+     process :resize_to_fill => [210, 210]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

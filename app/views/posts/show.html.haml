@@ -14,6 +14,6 @@
       .span16
         %h1 
           = @post.title
-        = image_tag("http://placehold.it/940x460", :alt=>@post.title)
+        = image_tag(@post.image_url, :alt=>@post.title)
       
     = render 'layouts/footer'

@@ -1,6 +1,4 @@
-body, html {
-    background: url("/assets/paper.jpg") repeat scroll 0 0 white;
-}
+
 body {
     padding-top: 60px;
 }
@@ -12,4 +10,8 @@ body {
 .container-fluid > .content {
   float: none;
   margin-left: 240px;
+}
+
+.media-grid a img {
+    max-width: 210px;
 }

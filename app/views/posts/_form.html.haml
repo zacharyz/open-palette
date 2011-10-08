@@ -1,0 +1,34 @@
+= form_for @post, :html=>{:multipart =>true} do |f|
+  - if @post.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@post.errors.count, "error") 
+        prohibited this post from being saved:
+
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li
+            = msg
+  %fieldset
+    %legend New Post
+    .clearfix
+      = f.label :title
+      .input
+        = f.text_field :title
+    .clearfix
+      .input
+        = f.file_field :image
+    .clearfix
+      = f.label :remote_image_url, "or image URL:"
+      .input
+        = f.text_field :remote_image_url
+    .clearfix
+      = f.label :content
+      .input
+        = f.text_field :content
+    .actions
+      = f.submit "Submit", :class=>"btn primary"
+      = f.submit "Cancel", :class=>"btn"
+                                                            
+  
+  
