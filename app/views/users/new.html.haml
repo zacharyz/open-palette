@@ -3,7 +3,7 @@
     = form_for(@user) do |f|
       = render 'shared/error_messages', :object => f.object
       %fieldset
-        %legend Settings
+        %legend Sign Up
         .clearfix
           = f.label :name
           .input
@@ -21,6 +21,5 @@
           .input
             = f.password_field :password_confirmation
         .actions
-          = f.submit "Save Changes", :class=>"btn primary"
+          = f.submit "Sign Up", :class=>"btn primary"
           = f.submit "Cancel", :class=>"btn"
-                          
