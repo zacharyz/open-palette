@@ -1,18 +1,19 @@
-.sidebar
-  .post-author                            
-    = gravatar_for @post.user, :size => 48
-    = @post.user.name
-  %hr
-  .post-description
-    = @post.content  
-  %hr
-  .hearts
-    = pluralize(@post.hearts.count, "hearts")
-.content
-  .row 
-    .span16
-      %h1 
-        = @post.title
-      = image_tag("http://placehold.it/940x460", :alt=>@post.title)
+.container-fluid
+  .sidebar
+    .post-author                            
+      = gravatar_for @post.user, :size => 48
+      = @post.user.name
+    %hr
+    .post-description
+      = @post.content  
+    %hr
+    .hearts
+      = pluralize(@post.hearts.count, "hearts")
+  .content
+    .row 
+      .span16
+        %h1 
+          = @post.title
+        = image_tag("http://placehold.it/940x460", :alt=>@post.title)
       
-  = render 'layouts/footer'
+    = render 'layouts/footer'
