@@ -1,0 +1,18 @@
+.container
+  .content
+    = form_for(:session, :url => sessions_path) do |f|
+      %fieldset
+        %legend Sign In
+        .clearfix
+          = f.label :email
+          .input
+            = f.text_field :email
+        .clearfix
+          = f.label :password
+          .input
+            = f.password_field :password
+        .actions
+          = f.submit "Sign in", :class=>"btn primary"
+
+    %p New user? 
+    = link_to "Sign up now!", signup_path
