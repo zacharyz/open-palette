@@ -1,5 +1,1 @@
-$('#signin-modal').observe('submit', function(event) {
-	<%= logger.debug "debugging create js"%>
-	event.stop();
-	this.request();
-});
+$('#signin-modal').html("<%= escape_javascript(render 'shared/signin_modal_form') %>");

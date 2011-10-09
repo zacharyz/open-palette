@@ -1,0 +1,7 @@
+$('#signin-modal').html("<%= escape_javascript(render 'shared/signin_modal_form') %>");  
+<%= logger.debug "new"%>
+$('#signin-modal').observe('submit', function(event) {
+	<%= logger.debug "debugging new js"%>
+	event.stop();
+	this.request();
+});

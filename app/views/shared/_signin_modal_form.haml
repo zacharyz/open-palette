@@ -1,0 +1,22 @@
+- logger.debug "i was rendered!"
+= form_for(:session, :url => sessions_path, :remote=>true) do |f|
+  .modal-header 
+    %a.close{:href=>"#"} &times;
+    %h3 Sign In
+  .modal-body                           
+    - flash.each do |key, value|
+      .clearfix
+        .alert-message.fade.in{:"data-alert"=>"alert", :class=> key}
+          %p
+            = value
+    .clearfix
+      = f.label :email
+      .input
+        = f.text_field :email
+    .clearfix
+      = f.label :password
+      .input
+        = f.password_field :password
+  .modal-footer
+    = f.submit "Sign in", :class=>"btn primary"
+    = f.submit "Cancel", :class=>"btn"            

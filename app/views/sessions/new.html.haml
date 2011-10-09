@@ -1,7 +1,12 @@
 .container
   .content
     = form_for(:session, :url => sessions_path) do |f|
-      %fieldset
+      - flash.each do |key, value|
+        .alert-message.fade.in{:"data-alert"=>"alert", :class=> key}
+          %a.close{:href=>"#"} ×                                
+          %p
+            = value 
+      %fieldset                                            
         %legend Sign In
         .clearfix
           = f.label :email

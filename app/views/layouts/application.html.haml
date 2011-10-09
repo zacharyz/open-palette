@@ -9,21 +9,4 @@
   %body
     = render 'layouts/header'
     = yield
-    #signin-modal.modal.hide.fade
-      = form_for(:session, :url => sessions_path, :remote=>true) do |f|
-        .modal-header 
-          %a.close{:href=>"#"} &times;
-          %h3 Sign In
-        .modal-body
-          .clearfix
-            = f.label :email
-            .input
-              = f.text_field :email
-          .clearfix
-            = f.label :password
-            .input
-              = f.password_field :password
-        .modal-footer
-          = f.submit "Sign in", :class=>"btn primary"
-          = f.submit "Cancel", :class=>"btn"            
-    
+    = render 'shared/signin_modal'
