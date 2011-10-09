@@ -1,0 +1,5 @@
+$('#signin-modal').observe('submit', function(event) {
+	<%= logger.debug "debugging create js"%>
+	event.stop();
+	this.request();
+});

@@ -26,7 +26,7 @@
       %ul.nav.secondary-nav
         - unless signed_in?
           %li
-            = link_to "Sign in", signin_path
+            = link_to "Sign in", signin_path, :id => 'signin-link', :"data-controls-modal" => "signin-modal", :"data-keyboard"=>"true", :"data-backdrop"=>"true"
         - else
           %li.dropdown{:data => {:dropdown=>"dropdown"}}
             %a.dropdown-toggle{:href=> "#"}

@@ -5,8 +5,7 @@
 // the compiled file.
 //                                                            
 //= require jquery
-//= require jquery_ujs
-//= require bootstrap                                         
+//= require jquery_ujs                                     
 //= require_self
 //= require_tree .
 
@@ -17,4 +16,3 @@ function error(msg) {
 
  // console.log(arguments);
 }
-

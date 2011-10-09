@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  layout :choose_layout
   def new
     @title = "Sign in"
   end
@@ -9,15 +10,29 @@ class SessionsController < ApplicationController
     if user.nil?
       flash.now[:error] = "Invalid email/password combination."
       @title = "Sign in"
-      render 'new'
+      
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js
+      end
     else
       sign_in user
-      redirect_back_or root_path
+      flash[:notice] = "Sign in successful!"
+      logger.debug "debugging create"
+      respond_to do |format|
+        format.html { redirect_back_or root_path }
+        format.js { render :action => :redirect }
+      end
     end
   end
   
   def destroy
     sign_out
+    flash[:notice] = "Sign out successful!"
     redirect_to root_path
   end
+  private  
+    def choose_layout  
+      (request.xhr?) ? nil : 'application'  
+    end
 end

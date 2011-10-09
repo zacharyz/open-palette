@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
   private
 
     def catch_cancel
-      redirect_back_or root_path if params[:commit] == "Cancel"
+      if params[:commit] == "Cancel" 
+        logger.debug "canceling...."
+        respond_to do |format|
+          format.html { redirect_back_or root_path }
+          format.js { render :action => :cancel }
+        end
+      end
     end
 end
