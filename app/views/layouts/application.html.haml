@@ -12,4 +12,6 @@
     = yield
     = render 'shared/signin_modal'
     - if signed_in?
+      - @user = current_user
       = render 'shared/upload'
+      = render 'shared/settings'
