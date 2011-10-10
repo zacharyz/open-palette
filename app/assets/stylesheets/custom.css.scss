@@ -15,8 +15,18 @@ body {
 }
 
 .content {
-  .media-grid a img {
-    max-width: 210px;
+  .media-grid {
+    a img {
+      max-width: 210px;
+    }
+    a {
+      background-color: white;
+      width: 210px;
+      height: 210px;
+    }
+  }
+  img {
+    max-width: 700px;
   }
 }                                  
 .brand { font-family: 'Pacifico', cursive; font-weight: 400; }

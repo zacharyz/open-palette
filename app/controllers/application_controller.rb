@@ -3,11 +3,9 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   before_filter :catch_cancel, :update => [:create, :update, :destroy]
   
-  private
-
+  private                            
     def catch_cancel
       if params[:commit] == "Cancel" 
-        logger.debug "canceling...."
         respond_to do |format|
           format.html { redirect_back_or root_path }
           format.js { render :action => :cancel }

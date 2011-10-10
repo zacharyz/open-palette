@@ -1,12 +1,4 @@
-.container-fluid
-  .sidebar
-    .well
-      %h5 Sidebar
-      %ul
-        %li <a href="#">Link</a>
-      %h5 Sidebar
-      %ul
-        %li <a href="#">Link</a>
+.container
   .content
     - flash.each do |key, value|
       .alert-message.fade.in{:"data-alert"=>"alert", :class=> key}
@@ -23,7 +15,7 @@
           = link_to "Sign up »", signup_path, :class=>"btn primary large"
                                                     
     .row 
-      .span16
+      .span12
         - unless @feed_items.empty?
           %ul.media-grid
             - @item_count = 0
@@ -31,4 +23,12 @@
               - @item_count = @item_count + 1
               = render :partial => "shared/feed_item", :locals => { :feed_item => feed_item,:item_count => @item_count }
           = paginate @feed_items
+      .span4
+        .sidebar
+          %h5 Sidebar
+          %ul
+            %li <a href="#">Link</a>
+          %h5 Sidebar
+          %ul
+            %li <a href="#">Link</a>
     = render 'layouts/footer'

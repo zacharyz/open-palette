@@ -1,20 +1,26 @@
-.container-fluid
-  .sidebar
-    .well
-      .post-author                            
-        = gravatar_for @post.user, :size => 48
-        = @post.user.name
-      %hr
-      .post-description
-        = @post.content  
-      %hr
-      .hearts
-        = pluralize(@post.hearts.count, "hearts")
+.container
   .content
+    - flash.each do |key, value|
+      .alert-message.fade.in{:"data-alert"=>"alert", :class=> key}
+        %a.close{:href=>"#"} ×                                
+        %p
+          = value   
+      - flash.delete(key)                              
     .row 
-      .span16
+      .span12
         %h1 
           = @post.title
         = image_tag(@post.image_url, :alt=>@post.title)
-      
-    = render 'layouts/footer'
+      .span4
+        .sidebar
+          .post-author                            
+            = gravatar_for @post.user, :size => 48
+            = @post.user.name
+          %hr
+          .post-description
+            = @post.content  
+          %hr
+          .hearts
+            = pluralize(@post.hearts.count, "hearts")
+          
+    = render 'layouts/footer'                          
