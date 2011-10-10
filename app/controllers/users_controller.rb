@@ -2,16 +2,16 @@ class UsersController < ApplicationController
   before_filter :authenticate, :except => [:show, :new, :create]
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
+  before_filter :new_post, :except => :destroy
   
   def index
-    @post = Post.new
     @title = "All users"
     #@users = User.paginate(:page => params[:page])
     @users = User.page(params[:page])  
   end
 
   def show
-    @post = Post.new
+  
     @user = User.find(params[:id])
     #@posts = @user.posts.paginate(:page => params[:page])  
     @posts = @user.posts.page(params[:page])  
@@ -77,7 +77,9 @@ class UsersController < ApplicationController
   
   private
 
-    
+    def new_post
+      @post = Post.new
+    end
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)

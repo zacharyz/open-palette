@@ -1,4 +1,6 @@
-
+body, html {
+  background: url("/assets/stucco.png") repeat scroll 0 0 white;
+}
 body {
     padding-top: 60px;
 }
@@ -12,6 +14,11 @@ body {
   margin-left: 240px;
 }
 
-.media-grid a img {
+.content {
+  .media-grid a img {
     max-width: 210px;
-}
+  }
+}  
+
+.brand { font-family: 'Pacifico', cursive; font-weight: 400; }
+
