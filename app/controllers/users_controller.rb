@@ -4,12 +4,14 @@ class UsersController < ApplicationController
   before_filter :admin_user,   :only => :destroy
   
   def index
+    @post = Post.new
     @title = "All users"
     #@users = User.paginate(:page => params[:page])
     @users = User.page(params[:page])  
   end
 
   def show
+    @post = Post.new
     @user = User.find(params[:id])
     #@posts = @user.posts.paginate(:page => params[:page])  
     @posts = @user.posts.page(params[:page])  

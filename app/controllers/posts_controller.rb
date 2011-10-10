@@ -32,6 +32,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @post }
+      format.js
     end
   end
 
@@ -44,10 +45,16 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(params[:post])
     if @post.save
       flash[:success] = "post created!"
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_back_or root_path }
+        format.js { render :action => :redirect }
+      end
     else
-      @feed_items = []
-      render 'pages/home'
+      flash[:error] = "Something isn't right."
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js
+      end
     end
   end
 

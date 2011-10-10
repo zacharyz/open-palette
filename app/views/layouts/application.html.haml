@@ -10,3 +10,5 @@
     = render 'layouts/header'
     = yield
     = render 'shared/signin_modal'
+    - if signed_in?
+      = render 'shared/upload'

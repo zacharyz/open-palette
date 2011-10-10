@@ -20,8 +20,8 @@
             %li
               = link_to 'Users', users_path
       - if signed_in?
-        %p.pull-left
-          = link_to 'Post', new_post_path
+        %p.pull-left                                                                            
+          = link_to "+ Post", new_post_path, :id => 'post-link', :"data-controls-modal" => "post-modal", :"data-keyboard"=>"true",:"data-backdrop"=>"true"                                                                                                          
         
       %ul.nav.secondary-nav
         - unless signed_in?
