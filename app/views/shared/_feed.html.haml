@@ -25,10 +25,25 @@
           = paginate @feed_items
       .span4
         .sidebar
-          %h5 Sidebar
-          %ul
-            %li <a href="#">Link</a>
-          %h5 Sidebar
-          %ul
-            %li <a href="#">Link</a>
+          %h5 Popular Tags
+          .row
+            %ol.popular-tags
+              %li.tag
+                %a{:href=>"#"} red
+              %li.tag
+                %a{:href=>"#"} blue
+              %li.tag
+                %a{:href=>"#"} green
+              %li.tag
+                %a{:href=>"#"} yellow  
+              %li.tag
+                %a{:href=>"#"} black
+              %li.tag
+                %a{:href=>"#"} orange
+              %li.tag
+                %a{:href=>"#"} purple
+              %li.tag
+                %a{:href=>"#"} brown
+              
+          %h5 Top Users
     = render 'layouts/footer'

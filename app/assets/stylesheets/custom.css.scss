@@ -31,3 +31,49 @@ body {
 }                                  
 .brand { font-family: 'Pacifico', cursive; font-weight: 400; }
 
+.sidebar {
+  h5 {
+     border-bottom: 1px solid #DDD;
+     margin: 0px 0px 10px 0px;
+  }
+}
+
+ol.popular-tags {      
+  li {
+      float: left;
+      font-size: 11px;
+      line-height: 1;
+      margin: 0; 
+      list-style-type: none;
+      a {
+          background:rgba(0, 0, 0, 0.07);
+          border: 1px solid #CCCCCC;
+          border-radius: 4px 4px 4px 4px;
+          color: #777777;
+          float: left;
+          font-weight: normal;
+          margin: 0 6px 6px 0;
+          padding: 3px 6px 4px;
+          text-decoration: none;
+          white-space: nowrap;
+          strong {
+              font-weight: normal;
+          }
+      }
+      a:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+          border-color: #BBBBBB;
+          color: #555555;
+          text-decoration: none;
+      }
+      span.perc {
+          display: none;
+      }
+      em {
+          display: none;
+      }
+  }    
+  li:hover {
+      background: none repeat scroll 0 0 transparent;
+  }
+}      
