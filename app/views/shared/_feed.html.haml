@@ -28,22 +28,8 @@
           %h5 Popular Tags
           .row
             %ol.popular-tags
-              %li.tag
-                %a{:href=>"#"} red
-              %li.tag
-                %a{:href=>"#"} blue
-              %li.tag
-                %a{:href=>"#"} green
-              %li.tag
-                %a{:href=>"#"} yellow  
-              %li.tag
-                %a{:href=>"#"} black
-              %li.tag
-                %a{:href=>"#"} orange
-              %li.tag
-                %a{:href=>"#"} purple
-              %li.tag
-                %a{:href=>"#"} brown
-              
+              - for tag in @tags
+                %li.tag
+                  = link_to tag.name, { :action => :tag, :id => tag.name, :controller => :posts }
           %h5 Top Users
     = render 'layouts/footer'

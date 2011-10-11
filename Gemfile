@@ -41,7 +41,7 @@ gem 'carrierwave'
 # end
 
 group :development do
-  gem 'rspec-rails', '2.5.0'
+  gem 'rspec-rails'
   #gem 'annotate-models', '1.0.4'
   #gem 'ZenTest'
   #gem 'autotest'
@@ -52,7 +52,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec', '2.5.0'
+  gem 'rspec'
   gem 'webrat', '0.7.1'
   gem 'spork', '0.9.0.rc5'
   #gem 'ZenTest'
@@ -72,6 +72,8 @@ gem 'jquery-rails'
 gem 'haml'
 
 gem 'bootstrap-sass', '1.3.0'
+   
+gem 'acts-as-taggable-on', '~>2.1.0'
 
 # Rails 3.1 - Heroku
 group :production do

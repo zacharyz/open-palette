@@ -29,7 +29,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   process :resize_to_limit => [940, 940]    
   process :convert => 'jpg'
   def filename
-    super + '.jpg'
+    if super
+      super.chomp(File.extname(super)) + '.jpg'
+    end
   end
   #
   # def scale(width, height)

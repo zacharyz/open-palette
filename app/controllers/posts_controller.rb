@@ -1,6 +1,7 @@
 class PostsController < ApplicationController 
   before_filter :authenticate, :only => [:create, :destroy]
   before_filter :authorized_user, :only => :destroy
+  before_filter :new_post, :except => :destroy
   # GET /posts
   # GET /posts.xml
   def index
@@ -86,8 +87,18 @@ class PostsController < ApplicationController
     @users = @post.hearters.page(params[:page])
     render 'show_heart'
   end
+  def tag_cloud
+    @tags = Post.tag_counts_on(:tags)
+  end
+  def tag
+    @posts = Post.tagged_with(params[:id])
+    @tags = Post.tag_counts_on(:tags)
+    render :action => 'index'
+  end
   private
-
+    def new_post
+      @post = Post.new
+    end
     def authorized_user
       @post = Post.find(params[:id])
       redirect_to root_path unless current_user?(@post.user)
