@@ -8,11 +8,20 @@
       - flash.delete(key)
     .row 
       .span12
-        - unless @user.posts.empty?
-          %ul.media-grid
-            - for post in @posts
-              = render post
-          = paginate @posts
+        - unless @users.empty?
+          %table.data.user-table.zebra
+            %tbody
+              %tr  
+                %th.list-title name
+                %th.num posts
+                %th.num hearts
+                %th.num following
+                %th.num followers
+                %th
+              - for user in @users
+                = render :partial=> 'shared/table_user', :locals => { :table_user => user }
+
+          = paginate @users
       .span4
         .sidebar
           %h5 Sidebar
@@ -22,5 +31,3 @@
           %ul
             %li <a href="#">Link</a>
     = render 'layouts/footer'
-
-    

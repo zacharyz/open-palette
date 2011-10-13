@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe postsController do
+describe PostsController do
   render_views
   
   describe "access control" do

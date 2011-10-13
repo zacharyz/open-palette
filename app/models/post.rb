@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   acts_as_taggable
-  attr_accessible :content,:image, :title, :remote_image_url   
+  attr_accessible :content,:image, :title, :remote_image_url, :tag_list   
                                      
   has_many :hearts, :foreign_key => "hearted_id",
                            :dependent => :destroy

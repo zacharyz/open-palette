@@ -52,11 +52,13 @@ group :development do
 end
 
 group :test do
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'webrat', '0.7.1'
   gem 'spork', '0.9.0.rc5'
   #gem 'ZenTest'
-  gem 'factory_girl_rails', '1.0'  
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
 end
 
 group :assets do

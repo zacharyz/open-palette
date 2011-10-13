@@ -3,7 +3,6 @@
       <%= gravatar_for table_user, :size => 30 %>
       <%= link_to table_user.name, table_user %>
    </td>
-   <td></td>
    <td class="num posts">
       <%= link_to table_user.posts.count, table_user %>
    </td>
@@ -16,22 +15,13 @@
    <td class="num followers">
       <%= link_to table_user.followers.count, followers_user_path(table_user) %>
    </td>    
-   <td class="follow">
+   <td class="follow"> 
+
       <% unless current_user?(table_user) %>
         <% if current_user.following?(table_user) %>
-          <%= form_for current_user.relationships.find_by_followed_id(table_user),
-                       :html => { :method => :delete },
-                       :remote => true do |f| %>
-            <div class="actions"><%= f.submit "Unfollow" %></div>
-          <% end %>
-          
+          <%= link_to "unfollow", { :id=>table_user.id, :controller => :relationships, :action => "destroy"},:method=>:delete, :"data-followed-id"=>table_user.id, :remote => true %>
         <% else %>
-          <%= form_for current_user.relationships.build(:followed_id => table_user.id),
-                       :remote => true do |f| %>
-            <div><%= f.hidden_field :followed_id %></div>
-            <div class="actions"><%= f.submit "Follow" %></div>
-          <% end %>
-          
+          <%= link_to "follow", { :id=>table_user.id, :controller => :relationships, :action => "create"},:method=>:post, :"data-followed-id"=>table_user.id, :remote => true %>
         <% end %>
       <% end %>
    </td>
