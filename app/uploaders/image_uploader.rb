@@ -26,7 +26,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_limit => [940, 940]    
+  process :resize_to_limit => [700, 700]    
   process :convert => 'jpg'
   def filename
     if super

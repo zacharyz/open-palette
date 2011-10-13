@@ -20,6 +20,11 @@
       .input
         = f.text_area :content, :class=>"xlarge", :rows=>"3"
         .help-block Provide a description for your picture. 
+    .clearfix
+      = f.label :tag_list, "Tags"
+      .input
+        = f.text_field :tag_list
+        .help-block Tags help categorize the posts. Separate tags with commas. 
   .modal-footer
     = f.submit "Submit", :class=>"btn primary"
     = f.submit "Cancel", :class=>"btn"
