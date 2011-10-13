@@ -90,7 +90,8 @@ class PostsController < ApplicationController
   def tag_cloud
     @tags = Post.tag_counts_on(:tags)
   end
-  def tag
+  def tag              
+    @title = "Posts tagged with '#{params[:id]}'" 
     @posts = Post.tagged_with(params[:id])
     @tags = Post.tag_counts_on(:tags)
     render :action => 'index'

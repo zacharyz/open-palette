@@ -16,11 +16,17 @@
           .post-author                            
             = gravatar_for @post.user, :size => 48
             = @post.user.name
-          %hr
+          %h5 Description
           .post-description
             = @post.content  
-          %hr
+          %h5 Hearts
           .hearts
             = pluralize(@post.hearts.count, "hearts")
-          
-    = render 'layouts/footer'                          
+          - unless @post.tags.empty?
+            %h5 Tags
+            .row
+              %ol.tags
+                - for tag in @post.tags
+                  %li.tag
+                    = link_to tag.name, { :action => :tag, :id => tag.name, :controller => :posts }
+    = render 'layouts/footer'

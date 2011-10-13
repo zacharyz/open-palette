@@ -27,7 +27,7 @@
         .sidebar
           %h5 Popular Tags
           .row
-            %ol.popular-tags
+            %ol.tags
               - for tag in @tags
                 %li.tag
                   = link_to tag.name, { :action => :tag, :id => tag.name, :controller => :posts }

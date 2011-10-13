@@ -9,6 +9,9 @@
     .row 
       .span12
         - unless @posts.empty?
+          - if @title
+            %h2 
+              = @title
           %ul.media-grid
             - for post in @posts
               = render post
@@ -16,12 +19,13 @@
           %p No Posts!
       .span4
         .sidebar
-          %h5 Sidebar
-          %ul
-            %li <a href="#">Link</a>
-          %h5 Sidebar
-          %ul
-            %li <a href="#">Link</a>
+          %h5 Popular Tags
+          .row
+            %ol.tags
+              - for tag in @tags
+                %li.tag
+                  = link_to tag.name, { :action => :tag, :id => tag.name, :controller => :posts }
+          %h5 Top Users
     = render 'layouts/footer'     
     
                      
