@@ -1,7 +1,7 @@
-= form_for @new_post, :html=>{:multipart =>true}, :remote=>true do |f|
+= form_for @post, :html=>{:multipart =>true}, :remote=>true do |f|
   .modal-header 
     %a.close{:href=>"#"} &times;
-    %h3 New Post
+    %h3 Edit Post
   .modal-body                           
     = render 'shared/error_messages', :object => f.object
     .clearfix

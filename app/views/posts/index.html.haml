@@ -26,6 +26,7 @@
                 %li.tag
                   = link_to tag.name, { :action => :tag, :id => tag.name, :controller => :posts }
           %h5 Top Users
+          = render 'shared/top_users'
     = render 'layouts/footer'     
     
                      

@@ -84,7 +84,7 @@ class UsersController < ApplicationController
   private
 
     def new_post
-      @post = Post.new
+      @new_post = Post.new
     end
     def correct_user
       @user = User.find(params[:id])

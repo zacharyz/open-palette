@@ -63,7 +63,6 @@ class PostsController < ApplicationController
   # PUT /posts/1.xml
   def update
     @post = Post.find(params[:id])
-
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to(@post, :notice => 'post was successfully updated.') }
@@ -77,7 +76,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_back_or root_path
+    respond_to do |format|
+      format.html { redirect_back_or root_path }
+      format.js { render :action => :redirect }
+    end
   end
   
   def hearts
@@ -98,7 +100,7 @@ class PostsController < ApplicationController
   end
   private
     def new_post
-      @post = Post.new
+      @new_post = Post.new
     end
     def authorized_user
       @post = Post.find(params[:id])
