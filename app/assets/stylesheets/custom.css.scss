@@ -29,8 +29,10 @@ body {
       height: 210px;
     }
   }
-  img {
-    max-width: 700px;
+  .post-image img {
+    max-width: 700px; 
+    margin: 0 auto;
+    display: block;
   }
 }                                  
 .brand { font-family: 'Pacifico', cursive; font-weight: 400; }

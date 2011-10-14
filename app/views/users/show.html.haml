@@ -8,17 +8,24 @@
       - flash.delete(key)
     .row 
       .span12
-        - unless @user.posts.empty?
-          %ul.media-grid
-            - for post in @posts
-              = render post
-          = paginate @posts
+        .row
+          %h2 
+            = gravatar_for @user, :size => 48
+            = @user.name          
+        .row
+          - unless @user.posts.empty?
+            %ul.media-grid
+              - for post in @posts
+                = render post
+            = paginate @posts
+          - else
+            %h3 No Posts!
       .span4
-        .sidebar
-          %h5 Sidebar
+        .sidebar  
+          %h2 Sidebar
           %ul
             = render "follow_form"
-          %h5 Sidebar
+            
           %ul
             %li <a href="#">Link</a>
     = render 'layouts/footer'

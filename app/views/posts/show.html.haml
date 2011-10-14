@@ -10,7 +10,8 @@
       .span12
         %h1 
           = @post.title
-        = image_tag(@post.image_url, :alt=>@post.title)
+        .post-image
+          = image_tag(@post.image_url, :alt=>@post.title)
       .span4
         .sidebar
           .post-author                            
