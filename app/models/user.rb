@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
                          
 	has_many :posts, :dependent => :destroy 
 	
-	scope :popular, :order => 'posts_count'
+	scope :popular, :order => 'posts_count desc', :limit => 9
 	
   has_many :relationships, :foreign_key => "follower_id",
                            :dependent => :destroy

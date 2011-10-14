@@ -41,6 +41,15 @@ body {
   h5 {
      border-bottom: 1px solid #DDD;
      margin: 0px 0px 10px 0px;
+  }  
+  .media-grid {
+    a img {
+    }
+    a {
+      background-color: white;
+      width: auto;
+      height: auto;
+    }
   }
 }
 
@@ -83,4 +92,8 @@ ol.tags {
       background: none repeat scroll 0 0 transparent;
   }
 }      
-
+ul.top-users {
+  li {
+    list-style-type: none;
+  }
+}

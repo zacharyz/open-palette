@@ -32,4 +32,9 @@
                 %li.tag
                   = link_to tag.name, { :action => :tag, :id => tag.name, :controller => :posts }
           %h5 Top Users
+          %ul.media-grid
+            - User.popular.each do |u|
+              %li 
+                = link_to gravatar_for(u, :size => 48, :class => "thumbnail", :alt => u.name), user_path(u)
+              
     = render 'layouts/footer'
