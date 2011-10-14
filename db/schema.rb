@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011055942) do
+ActiveRecord::Schema.define(:version => 20111014002626) do
 
   create_table "hearts", :force => true do |t|
     t.integer  "hearter_id"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20111011055942) do
     t.string   "provider"
     t.string   "uid"
     t.string   "image"
+    t.integer  "posts_count",        :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
                            :dependent => :destroy
   has_many :hearters, :through => :hearts, :source => :hearter
     
-  belongs_to :user
+  belongs_to :user, :counter_cache => true
   
   validates :content, :presence => true, :length => { :maximum => 140 }
   validates :user_id, :presence => true

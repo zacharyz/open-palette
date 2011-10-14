@@ -21,7 +21,10 @@ class User < ActiveRecord::Base
                          :length       => { :within => 6..40 }
   before_save :encrypt_password
                          
-	has_many :posts, :dependent => :destroy
+	has_many :posts, :dependent => :destroy 
+	
+	scope :popular, :order => 'posts_count'
+	
   has_many :relationships, :foreign_key => "follower_id",
                            :dependent => :destroy
   has_many :following, :through => :relationships, :source => :followed
