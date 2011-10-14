@@ -1,4 +1,5 @@
 class PagesController < ApplicationController   
+  before_filter :new_post, :except => :destroy
   def home
     @title = "Home"                             
     @tags = Post.tag_counts_on(:tags).sort_by(&:count).reverse
@@ -24,4 +25,8 @@ class PagesController < ApplicationController
   def help
     @title = "Help"
   end
+  private
+    def new_post
+      @new_post = Post.new
+    end
 end

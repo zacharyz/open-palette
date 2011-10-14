@@ -97,3 +97,14 @@ ul.top-users {
     list-style-type: none;
   }
 }
+
+.container {
+  footer {
+    margin-top: 17px;
+    padding-top: 17px;
+    border-top: 1px solid #DDD;
+    p {
+      text-align: center;
+    }
+  }
+}

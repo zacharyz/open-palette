@@ -9,15 +9,14 @@ class SessionsController < ApplicationController
                              params[:session][:password])
     if user.nil?
       flash.now[:error] = "Invalid email/password combination."
-      @title = "Sign in"
-      logger.debug "we got a problem"
+      @title = "Sign in"               
       respond_to do |format|
         format.html { render 'new' }
         format.js
       end
     else
       sign_in user
-      flash[:success] = "Sign in successful!"
+      flash[:success] = "Welcome back!"
       logger.debug "debugging create"
       respond_to do |format|
         format.html { redirect_back_or root_path }
@@ -28,7 +27,7 @@ class SessionsController < ApplicationController
   
   def destroy
     sign_out
-    flash[:success] = "Sign out successful!"
+    flash[:success] = "Come back soon!"
     redirect_to root_path
   end
   private  
