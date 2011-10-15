@@ -15,19 +15,17 @@
           .details
           = render "follow_form"           
         
-        - unless @user.posts.empty?
+        - unless @posts.empty?
           %ul.media-grid
             - for post in @posts
               = render post
           = paginate @posts
         - else
-          %h3 No Posts!
+          %h3 No Hearts!
       .span4
         .sidebar  
           %h5 Following  
           = render 'shared/following'
-          %h5 Hearts
-          = render 'shared/hearts'
-    = render 'layouts/footer'
-
+    = render 'layouts/footer'   
     
+

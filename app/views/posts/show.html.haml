@@ -21,7 +21,8 @@
           .post-description
             = @post.content  
           %h5 Hearts
-          .hearts
+          = render "heart_form"
+          #hearts              
             = pluralize(@post.hearts.count, "hearts")
           - unless @post.tags.empty?
             %h5 Tags

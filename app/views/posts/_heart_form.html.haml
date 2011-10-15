@@ -1,0 +1,6 @@
+- if signed_in?
+  #heart_form
+    - if current_user.heart?(@post)
+      = render 'unheart'
+    - else
+      = render 'heart'        

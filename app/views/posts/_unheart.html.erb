@@ -1,5 +1,0 @@
-<%= form_for current_user.hearts.find_by_hearted_id(@post),
-             :html => { :method => :delete },
-             :remote => true do |f| %>
-  <div class="actions"><%= f.submit "Unheart", :class=>"unheart_submit" %></div>
-<% end %>
