@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       end
     else
       sign_in user
-      flash[:success] = "Welcome back!"
+      flash[:success] = "Welcome back #{current_user.name}!"
       logger.debug "debugging create"
       respond_to do |format|
         format.html { redirect_back_or root_path }
@@ -26,8 +26,9 @@ class SessionsController < ApplicationController
   end
   
   def destroy
+    flash[:success] = "Come back soon #{current_user.name}!"
     sign_out
-    flash[:success] = "Come back soon!"
+
     redirect_to root_path
   end
   private  

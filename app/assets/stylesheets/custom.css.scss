@@ -107,4 +107,47 @@ ul.top-users {
       text-align: center;
     }
   }
+}                             
+
+.topbar {
+  .vr {
+    border-left: 1px solid #040404;
+    border-right: 1px solid #2F2F2F;
+    height: 26px;
+    display: inline-block;
+    margin: 6px 3px 1px 3px;
+  }
+}
+.profile {             
+  border-bottom: 1px solid #DDD;
+  margin: 0px 0px 10px 0px;
+  padding-bottom: 10px;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;        
+    font-size: 1.8em;
+  }
+  .gravatar {
+    float: left;
+    display: block;
+    position: relative;
+    width: 56px;
+    max-height: 56px;
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+    padding: 4px;
+    background: white;
+    border: 1px solid #E5E5E5;
+    border-image: initial;
+  }
+}
+.clearfix:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
 }

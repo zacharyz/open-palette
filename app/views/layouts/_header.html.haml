@@ -19,7 +19,9 @@
             = link_to "Sign in", signin_path, :id => 'signin-link', :"data-controls-modal" => "signin-modal", :"data-keyboard"=>"true", :"data-backdrop"=>"true"
         - else
           %li
-            = link_to "+ Post", new_post_path, :id => 'post-link', :"data-controls-modal" => "post-modal", :"data-keyboard"=>"true",:"data-backdrop"=>"true"                                                                                                          
+            = link_to "+ Post", new_post_path, :id => 'post-link', :"data-controls-modal" => "post-modal", :"data-keyboard"=>"true",:"data-backdrop"=>"true"                                                         
+          %li
+            .vr
           %li.dropdown{:data => {:dropdown=>"dropdown"}}
             %a.dropdown-toggle{:href=> "#"}
               = current_user.name

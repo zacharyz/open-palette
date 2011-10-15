@@ -8,26 +8,24 @@
       - flash.delete(key)
     .row 
       .span12
-        .row
-          %h2 
-            = gravatar_for @user, :size => 48
+        .profile.clearfix
+          = gravatar_for @user, :size => 48 
+          %h1 
             = @user.name          
-        .row
-          - unless @user.posts.empty?
-            %ul.media-grid
-              - for post in @posts
-                = render post
-            = paginate @posts
-          - else
-            %h3 No Posts!
+          .details
+          = render "follow_form"           
+        
+        - unless @user.posts.empty?
+          %ul.media-grid
+            - for post in @posts
+              = render post
+          = paginate @posts
+        - else
+          %h3 No Posts!
       .span4
         .sidebar  
-          %h2 Sidebar
-          %ul
-            = render "follow_form"
-            
-          %ul
-            %li <a href="#">Link</a>
+          %h5 Following  
+          = render 'shared/following'
     = render 'layouts/footer'
 
     
