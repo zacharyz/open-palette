@@ -33,7 +33,7 @@
                     = link_to tag.name, { :action => :tag, :id => tag.name, :controller => :posts }
             = render "related"
             
-          - if @post.user == current_user
+          - if @post.user == current_user || current_user.admin?
             %h5 Meta
             = link_to "Edit", new_post_path, :id => 'post-link', :"data-controls-modal" => "edit-post-modal", :"data-keyboard"=>"true",:"data-backdrop"=>"true", :class => "btn"
             = link_to "Delete", @post, :confirm => "Are you sure?", :method => :delete, :class => "btn danger"
