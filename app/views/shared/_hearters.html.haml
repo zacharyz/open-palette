@@ -1,0 +1,5 @@
+- if @hearters
+  %ul.media-grid
+    - @hearters.each do |u|
+      %li 
+        = link_to gravatar_for(u, :size => 48, :class => "thumbnail", :alt => u.name), user_path(u)

@@ -1,0 +1,9 @@
+- unless @post.tag_list.empty?
+  - related = @post.find_related_tags
+  - unless related.length == 0
+    %h5 Related
+    %ul.media-grid
+      - related.each do |post|
+        %li 
+          = link_to image_tag(post.image_url(:thumb).to_s, :alt=> post.title,:class => "thumbnail", :alt=> post.title),post_path(post)
+  

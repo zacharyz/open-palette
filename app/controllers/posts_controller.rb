@@ -18,10 +18,9 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     @post = Post.find(params[:id])
-
+    @hearters = @post.hearters.limit(9)
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @post }
     end
   end
 
