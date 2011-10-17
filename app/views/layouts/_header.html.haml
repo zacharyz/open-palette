@@ -8,18 +8,18 @@
       %ul.nav
         - if signed_in?
           - if @current_controller == "posts" && @current_action == "index"
-            %li.active
+            %li.alt-icon.home.active
               = link_to 'Home', root_path
           - else
-            %li
+            %li.alt-icon.home
               = link_to 'Home', root_path
       %ul.nav.secondary-nav
         - unless signed_in?
           %li
             = link_to "Sign in", signin_path, :id => 'signin-link', :"data-controls-modal" => "signin-modal", :"data-keyboard"=>"true", :"data-backdrop"=>"true"
         - else
-          %li
-            = link_to "+ Post", new_post_path, :id => 'post-link', :"data-controls-modal" => "post-modal", :"data-keyboard"=>"true",:"data-backdrop"=>"true"                                                         
+          %li.alt-icon.add-alt
+            = link_to "Post", new_post_path, :id => 'post-link', :"data-controls-modal" => "post-modal", :"data-keyboard"=>"true",:"data-backdrop"=>"true"                                                         
           %li
             .vr
           %li.dropdown{:data => {:dropdown=>"dropdown"}}
@@ -30,7 +30,7 @@
                 = link_to 'Users', users_path
               
               %li
-                = link_to 'Hearts', hearts_user_path(current_user)
+                = link_to 'Favorites', hearts_user_path(current_user)
               %li
                 = link_to 'Profile', current_user
               %li.divider

@@ -13,14 +13,15 @@
         .post-image
           = image_tag(@post.image_url, :alt=>@post.title)
       .span4.sidebar
-        = render "author"
+        %h5
+          = render "author"
+        = render "heart_form"
+        #hearts              
+          = pluralize(@post.hearts.count, "like")
+        
         %h5 Description
         .post-description
           = @post.content  
-        %h5 Hearts
-        = render "heart_form"
-        #hearts              
-          = pluralize(@post.hearts.count, "hearts")
         - unless @post.tags.empty?
           %h5 Tags
           .row

@@ -153,3 +153,360 @@ ul.top-users {
   visibility: hidden;
   font-size: 0;
 }
+   
+
+.icon, .alt-icon {
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+    list-style:none;
+    padding:0;
+    margin:0 0 0.25em;
+}
+
+.icon a:link, 
+.icon a:visited {
+    display:block;
+    border:0;
+    padding-left:28px;
+    color:#000;
+}
+.alt-icon a:link, 
+.alt-icon a:visited {
+    display:block;
+    border:0;
+    padding-left:28px;
+    color:#BFBFBF;
+}
+
+.icon a:hover, 
+.icon a:focus, 
+.icon a:active {
+    color:#EA4C88;
+    background:transparent;
+}
+.alt-icon a:hover, 
+.alt-icon a:focus, 
+.alt-icon a:active {
+    color:#fff;
+    background:transparent;
+}
+.alt-icon:before, 
+.alt-icon:after,
+.alt-icon a:before, 
+.alt-icon a:after,
+.icon:before, 
+.icon:after,
+.icon a:before, 
+.icon a:after {
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+}
+
+.icon a:before, 
+.icon a:after {
+    margin:-8px 0 0;
+    background:#333;
+}
+
+.icon a:hover:before, 
+.icon a:active:before {
+    background:#EA4C88;
+} 
+.alt-icon a:hover:before, 
+.alt-icon a:active:before {
+    background:#fff;
+}
+/* LIKE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.like a:before, 
+.like a:after {
+    width:14px;
+    height:9px;
+    margin-top:-6px;
+    background:#333;
+    /* css3 */
+    -webkit-border-top-left-radius:8px;
+    -webkit-border-bottom-left-radius:8px;
+    -moz-border-radius:6px 0 0 6px;
+    border-radius:6px 0 0 6px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg); 
+}
+
+.like a:after {
+    left:4px;
+    /* css3 */
+    -webkit-transform:rotate(135deg);
+    -moz-transform:rotate(135deg);
+    -o-transform:rotate(135deg);
+    transform:rotate(135deg);
+}
+
+.like a:hover:after, 
+.like a:focus:after, 
+.like a:active:after {
+    background:#EA4C88;
+}
+
+.liked a:before, 
+.liked a:after {
+    width:14px;
+    height:9px;
+    margin-top:-6px;
+    background:#EA4C88;
+    /* css3 */
+    -webkit-border-top-left-radius:8px;
+    -webkit-border-bottom-left-radius:8px;
+    -moz-border-radius:6px 0 0 6px;
+    border-radius:6px 0 0 6px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg); 
+}
+
+.liked a:after {
+    left:4px;
+    /* css3 */
+    -webkit-transform:rotate(135deg);
+    -moz-transform:rotate(135deg);
+    -o-transform:rotate(135deg);
+    transform:rotate(135deg);
+}
+
+.liked a:hover:after, 
+.liked a:focus:after, 
+.liked a:active:after {
+    background:#EA4C88;
+}
+
+/* ADD
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.add a:before {
+    width:16px; 
+    height:16px; 
+    /* css3 */
+    -webkit-border-radius:16px; 
+    -moz-border-radius:16px; 
+    border-radius:16px;
+}
+
+.add a:after {
+    left:3px; 
+    width:10px; 
+    height:2px; 
+    margin-top:-1px; 
+    background:#fff;
+}
+
+.add:before {
+    z-index:10; 
+    left:7px; 
+    width:2px; 
+    height:10px; 
+    margin-top:-5px;
+    background:#fff;
+}
+
+/* Alternative style */
+
+.add-alt a:before {
+    left:6px; 
+    width:5px; 
+    height:15px; 
+    margin-top:-7px;
+    background:#BFBFBF;
+}
+
+.add-alt a:after {
+    left:1px; 
+    width:15px; 
+    height:5px; 
+    margin-top:-2px; 
+    background:#BFBFBF;
+}
+
+.add-alt a:hover:after, 
+.add-alt a:focus:after, 
+.add-alt a:active:after {
+    background:#fff;
+}
+          
+/* REMOVE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.remove a:before {
+    width:16px; 
+    height:16px; 
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.remove a:after {
+    left:3px; 
+    width:10px; 
+    height:2px; 
+    margin-top:-1px; 
+    background:#fff;
+}
+
+/* Alternative style */
+
+.remove-alt a:before {
+    left:1px; 
+    width:15px; 
+    height:5px; 
+    margin-top:-2px; 
+    background:#c55500;
+}
+
+/* DELETE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.delete a:before {
+    width:16px; 
+    height:16px; 
+    /* css3 */
+    -webkit-border-radius:16px; 
+    -moz-border-radius:16px; 
+    border-radius:16px;
+}
+
+.delete a:after {
+    left:3px; 
+    width:10px; 
+    height:2px; 
+    margin-top:-1px; 
+    background:#fff;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.delete:before {
+    z-index:10; 
+    left:7px; 
+    width:2px; 
+    height:10px; 
+    margin-top:-5px;
+    background:#fff;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+/* Alternative style */
+
+.delete-alt a:before {
+    left:6px; 
+    width:5px; 
+    height:15px; 
+    margin-top:-7px;
+    background:#c55500;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.delete-alt a:after {
+    left:1px; 
+    width:15px; 
+    height:5px; 
+    margin-top:-2px; 
+    background:#c55500;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.delete-alt a:hover:after, 
+.delete-alt a:focus:after, 
+.delete-alt a:active:after {
+    background:#730800;
+}
+               
+.home a:before {
+    left:8px;
+    border-style:solid;
+    border-color:transparent;
+    border-width:8px 7px;
+    border-bottom-color:#BFBFBF;
+    margin-top:-16px;
+    background:transparent;
+}
+
+.home a:after {
+    left:10px; 
+    width:2px; 
+    height:4px; 
+    border-style:solid;
+    border-color:#BFBFBF #BFBFBF transparent;
+    border-width:3px 4px 0;
+    margin-top:0;
+    background:transparent;
+}
+
+.home a:hover:before, 
+.home a:focus:before, 
+.home a:active:before {
+    border-bottom-color:#fff;
+    background:transparent;
+}
+
+.home a:hover:after, 
+.home a:focus:after, 
+.home a:active:after {
+    border-color:#fff #fff transparent;
+}
+ 
+/* PROFILE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.prof-icon a:before {
+    left:4px;
+    width:16px;
+    height:5px;
+    margin-top:1px;
+    /* css3 */
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    -moz-border-radius:5px 5px 0 0;
+    border-radius:5px 5px 0 0;        
+}
+
+.prof-icon a:after {
+    left:9px;
+    width:6px;
+    height:10px;
+    margin-top:-7px;
+    /* css3 */
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px 10px;
+    -webkit-border-bottom-left-radius:5px 10px;
+    -moz-border-radius:5px 5px 5px 5px / 5px 5px 10px 10px;
+    border-radius:5px 5px 5px 5px / 5px 5px 10px 10px;
+}
+
+.prof-icon a:hover:after,
+.prof-icon a:focus:after,
+.prof-icon a:active:after {
+    background:#730800;
+}

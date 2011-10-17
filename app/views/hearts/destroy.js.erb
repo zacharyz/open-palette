@@ -1,2 +1,2 @@
 $("#heart_form").html("<%= escape_javascript(render('posts/heart')) %>")
-$("#hearts").html('<%= "#{@post.hearts.count} hearts" %>')
+$("#hearts").html('<%= pluralize(@post.hearts.count, "like") %>')

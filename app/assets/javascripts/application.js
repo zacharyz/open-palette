@@ -29,13 +29,13 @@ function error(msg) {
 $(function(){        
   $('.main .posts').imagesLoaded(function(){
     $('.main .posts').masonry({
-      itemSelector : '.item',
+      itemSelector : '.post',
       columnWidth : 240
     });
   });  
   $('.sidebar .posts').imagesLoaded(function(){
     $('.sidebar .posts').masonry({
-      itemSelector : '.item',
+      itemSelector : '.post',
       columnWidth : 40
     });
   });  
