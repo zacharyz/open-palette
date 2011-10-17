@@ -107,9 +107,11 @@ class PostsController < ApplicationController
   end                  
   
   def tag              
-    @title = "Posts tagged with '#{params[:id]}'" 
+    @title = "Posts tagged with '#{params[:id]}'"
+    @tags = Post.tag_counts_on(:tags).limit(15).sort_by(&:count).reverse
     @posts = Post.tagged_with(params[:id]).page(params[:page]).per(18)                      
     respond_to do |format|
+        format.html { render :index }
         format.js {render :action => :update_posts }
     end  
   end
