@@ -8,15 +8,7 @@
       - flash.delete(key)
     .row 
       .span12
-        - unless @posts.empty?
-          - if @title
-            %h2 
-              = @title
-          %ul.media-grid
-            - for post in @posts
-              = render post
-        - else
-          %p No Posts!
+        = render "shared/feed_posts"
       .span4
         .sidebar
           %h5 Popular Tags

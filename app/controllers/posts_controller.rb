@@ -5,12 +5,18 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    #@posts = Post.all.paginate(:page => params[:page],:per_page => 18) 
-    @posts = Post.order("name").page(params[:page]).per(18)
+
+    @title = "Home"                             
+    @tags = Post.tag_counts_on(:tags).limit(15).sort_by(&:count).reverse
+    if signed_in?
+      @posts = current_user.feed.page(params[:page]).per(18)                             
+      @new_post = Post.new
+    else
+      @posts = Post.page(params[:page]).per(18) 
+    end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @posts }
     end
   end
 
@@ -99,12 +105,14 @@ class PostsController < ApplicationController
   end
   def tag_cloud
     @tags = Post.tag_counts_on(:tags)
-  end
+  end                  
+  
   def tag              
     @title = "Posts tagged with '#{params[:id]}'" 
-    @posts = Post.tagged_with(params[:id])
-    @tags = Post.tag_counts_on(:tags)
-    render :action => 'index'
+    @posts = Post.tagged_with(params[:id]).page(params[:page]).per(18)                      
+    respond_to do |format|
+        format.js {render :action => :update_posts }
+    end  
   end
   private
     def new_post
