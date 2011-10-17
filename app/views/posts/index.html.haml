@@ -1,23 +1,13 @@
 .container
   .content
-    - flash.each do |key, value|
-      .alert-message.fade.in{:"data-alert"=>"alert", :class=> key}
-        %a.close{:href=>"#"} ×                                
-        %p
-          = value   
-      - flash.delete(key)
+    = render "shared/flash_messages"
+    = render "shared/signup_message"
     .row 
       .span12.posts
         = render "shared/feed_posts"
       .span4.sidebar
-        %h5 Popular Tags
-        .row
-          %ol.tags
-            - for tag in @tags
-              %li.tag
-                = link_to tag.name, { :action=> :tag, :id => tag.name, :controller => :posts }, :remote => true
-        %h5 Top Users
-        = render 'shared/top_users'
+        = render "shared/popular_tags"
+        = render "shared/top_users"
     = render 'layouts/footer'     
     
                      

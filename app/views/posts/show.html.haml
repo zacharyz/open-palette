@@ -14,9 +14,7 @@
           = image_tag(@post.image_url, :alt=>@post.title)
       .span4
         .sidebar
-          .post-author                            
-            = gravatar_for @post.user, :size => 48
-            = @post.user.name
+          = render "author"
           %h5 Description
           .post-description
             = @post.content  
