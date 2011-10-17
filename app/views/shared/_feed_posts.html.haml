@@ -2,9 +2,9 @@
   - if @title
     %h2 
       = @title
-  %ul.media-grid
+  %ul.media-grid.posts
     - for post in @posts
       = render :partial => "shared/feed_item", :locals => { :feed_item => post}
-  = paginate @posts    
+    = paginate @posts    
 - else
   %p No Posts!

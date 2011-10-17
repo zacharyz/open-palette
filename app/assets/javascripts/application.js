@@ -16,3 +16,16 @@ function error(msg) {
 
  // console.log(arguments);
 }
+
+$(function(){        
+  var $container = $('.posts');
+  $container.imagesLoaded(function(){
+    $container.masonry({
+      itemSelector : '.item',
+      columnWidth : 240
+    });
+  });  
+  
+});
+
+
