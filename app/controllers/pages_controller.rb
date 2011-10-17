@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       @posts = current_user.feed.page(params[:page]).per(18)                             
       @new_post = Post.new
     else
-      @feed_items = Post.page(params[:page]).per(18) 
+      @posts = Post.page(params[:page]).per(18) 
     end
   end  
   def location

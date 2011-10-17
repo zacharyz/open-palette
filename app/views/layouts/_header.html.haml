@@ -7,7 +7,7 @@
       - @current_id = params[:id]
       %ul.nav
         - if signed_in?
-          - if @current_controller == "pages" && @current_action == "home"
+          - if @current_controller == "posts" && @current_action == "index"
             %li.active
               = link_to 'Home', root_path
           - else

@@ -5,10 +5,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-
-    @title = "Home"                             
     @tags = Post.tag_counts_on(:tags).limit(15).sort_by(&:count).reverse
     if signed_in?
+      @title = "Hey #{current_user.name}, here are some posts"
       @posts = current_user.feed.page(params[:page]).per(18)                             
       @new_post = Post.new
     else
