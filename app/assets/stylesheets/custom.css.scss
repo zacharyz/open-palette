@@ -26,7 +26,8 @@ body {
     a {
       width: 210px;
       float: left;            
-      margin-bottom: 15px;  
+      margin-bottom: 15px;    
+      background-color: white;
     } 
   }
   .post-image img {
@@ -45,7 +46,6 @@ body {
   .media-grid {
     a img {  
       max-width: 48px;
-      max-height: 48px;
     }
     a {
       background-color: white;
