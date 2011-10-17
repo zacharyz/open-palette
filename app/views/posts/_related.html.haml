@@ -1,5 +1,5 @@
 - unless @post.tag_list.empty?
-  - related = @post.find_related_tags
+  - related = @post.find_related_tags.limit(9)
   - unless related.length == 0
     %h5 Related
     %ul.media-grid
