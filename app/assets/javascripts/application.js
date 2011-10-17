@@ -27,13 +27,20 @@ function error(msg) {
 }
 
 $(function(){        
-  $('.posts').imagesLoaded(function(){
-    $('.posts').masonry({
+  $('.main .posts').imagesLoaded(function(){
+    $('.main .posts').masonry({
       itemSelector : '.item',
       columnWidth : 240
     });
   });  
+  $('.sidebar .posts').imagesLoaded(function(){
+    $('.sidebar .posts').masonry({
+      itemSelector : '.item',
+      columnWidth : 40
+    });
+  });  
   
 });
+               
 
 

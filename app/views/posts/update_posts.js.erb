@@ -1,7 +1,7 @@
 $('.main').html("<%= escape_javascript(render 'shared/feed_posts') %>");
 
 $(function(){        
-  var $container = $('.posts');
+  var $container = $('.main .posts');
   $container.imagesLoaded(function(){
     $container.masonry({
       itemSelector : '.item',

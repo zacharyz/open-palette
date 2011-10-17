@@ -2,8 +2,8 @@
   - related = @post.find_related_tags.limit(9)
   - unless related.length == 0
     %h5 Related
-    %ul.media-grid
+    %ul.media-grid.posts
       - related.each do |post|
         %li 
-          = link_to image_tag(post.image_url(:thumb).to_s, :alt=> post.title,:class => "thumbnail", :alt=> post.title),post_path(post)
+          = link_to image_tag(post.image_url(:thumb).to_s, :alt=> post.title,:class => "thumbnail", :alt=> post.title),post_path(post), :class=>"item"
   

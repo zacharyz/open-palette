@@ -7,7 +7,7 @@
           = value   
       - flash.delete(key)
     .row 
-      .span12
+      .span12.main
         .profile.clearfix
           = gravatar_for @user, :size => 48 
           %h1 
@@ -22,12 +22,12 @@
           = paginate @posts
         - else
           %h3 No Posts!
-      .span4
-        .sidebar  
-          %h5 Following  
-          = render 'shared/following'
-          %h5 Hearts
-          = render 'shared/hearts'
+      .span4.sidebar  
+      
+        %h5 Following  
+        = render 'shared/following'
+        %h5 Hearts
+        = render 'shared/hearts'
     = render 'layouts/footer'
 
     

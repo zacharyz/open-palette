@@ -1,7 +1,7 @@
 - if @user
-  %ul.media-grid
+  %ul.media-grid.posts
     - @user.hearts.limit(9).each do |heart|       
       - post = heart.hearted
       %li 
-        = link_to image_tag(post.image_url(:thumb).to_s, :alt=> post.title,:class => "thumbnail", :alt=> post.title),post_path(post)
+        = link_to image_tag(post.image_url(:thumb).to_s, :alt=> post.title,:class => "thumbnail", :alt=> post.title),post_path(post),:class=>"item"
                                                 
