@@ -7,34 +7,33 @@
           = value   
       - flash.delete(key)                              
     .row 
-      .span12
+      .span12.main
         %h1 
           = @post.title
         .post-image
           = image_tag(@post.image_url, :alt=>@post.title)
-      .span4
-        .sidebar
-          = render "author"
-          %h5 Description
-          .post-description
-            = @post.content  
-          %h5 Hearts
-          = render "heart_form"
-          #hearts              
-            = pluralize(@post.hearts.count, "hearts")
-          - unless @post.tags.empty?
-            %h5 Tags
-            .row
-              %ol.tags
-                - for tag in @post.tags
-                  %li.tag
-                    = link_to tag.name, { :action => :tag, :id => tag.name, :controller => :posts }
-            = render "related"
-          - if signed_in?  
-            - if @post.user == current_user || current_user.admin?
-              %h5 Meta
-              = link_to "Edit", new_post_path, :id => 'post-link', :"data-controls-modal" => "edit-post-modal", :"data-keyboard"=>"true",:"data-backdrop"=>"true", :class => "btn"
-              = link_to "Delete", @post, :confirm => "Are you sure?", :method => :delete, :class => "btn danger"
+      .span4.sidebar
+        = render "author"
+        %h5 Description
+        .post-description
+          = @post.content  
+        %h5 Hearts
+        = render "heart_form"
+        #hearts              
+          = pluralize(@post.hearts.count, "hearts")
+        - unless @post.tags.empty?
+          %h5 Tags
+          .row
+            %ol.tags
+              - for tag in @post.tags
+                %li.tag
+                  = link_to tag.name, { :action => :tag, :id => tag.name, :controller => :posts }
+          = render "related"
+        - if signed_in?  
+          - if @post.user == current_user || current_user.admin?
+            %h5 Meta
+            = link_to "Edit", new_post_path, :id => 'post-link', :"data-controls-modal" => "edit-post-modal", :"data-keyboard"=>"true",:"data-backdrop"=>"true", :class => "btn"
+            = link_to "Delete", @post, :confirm => "Are you sure?", :method => :delete, :class => "btn danger"
             
     = render 'shared/edit_post'
     = render 'layouts/footer'

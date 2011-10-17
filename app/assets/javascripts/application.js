@@ -33,6 +33,12 @@ $(function(){
       columnWidth : 240
     });
   });  
+  $('.sidebar .posts').imagesLoaded(function(){
+    $('.sidebar .posts').masonry({
+      itemSelector : '.item',
+      columnWidth : 40
+    });
+  });  
   
 });
                
