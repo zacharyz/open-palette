@@ -34,7 +34,7 @@
           - if @post.user == current_user
             %h5 Meta
             = link_to "Edit", new_post_path, :id => 'post-link', :"data-controls-modal" => "edit-post-modal", :"data-keyboard"=>"true",:"data-backdrop"=>"true", :class => "btn"
-            = link_to "Destroy", @post, :confirm => "Are you sure?", :method => :delete, :class => "btn danger"
+            = link_to "Delete", @post, :confirm => "Are you sure?", :method => :delete, :class => "btn danger"
             
     = render 'shared/edit_post'
     = render 'layouts/footer'

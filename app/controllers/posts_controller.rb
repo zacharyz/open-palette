@@ -63,15 +63,24 @@ class PostsController < ApplicationController
   # PUT /posts/1.xml
   def update
     @post = Post.find(params[:id])
-    respond_to do |format|
-      if @post.update_attributes(params[:post])
-        format.html { redirect_to(@post, :notice => 'post was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
+    
+    if @post.update_attributes(params[:post])
+      respond_to do |format|
+        flash[:success] = 'post was successfully updated.'
+        logger.debug "debug: updated post"
+        format.html {redirect_back_or root_path}
+        format.js {render :action => :update }
       end
-    end
+      
+    else
+      respond_to do |format|
+        flash[:error] = "Something isn't right"
+        format.html { render :action => "edit" }
+        format.js { render :action => :edit}
+      end    
+    end  
+
+
   end
 
   def destroy
