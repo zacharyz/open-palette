@@ -16,7 +16,7 @@
           = render "follow_form"           
         
         - unless @posts.empty?
-          %ul.media-grid
+          %ul.media-grid.posts
             - for post in @posts
               = render post
           = paginate @posts

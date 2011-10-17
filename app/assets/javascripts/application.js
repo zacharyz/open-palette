@@ -5,9 +5,18 @@
 // the compiled file.
 //                                                            
 //= require jquery
-//= require jquery_ujs                                     
+//= require jquery_ujs         
+//= require jquery.masonry
+//= require jquery.imagesloaded                            
+//= require bootstrap-twipsy
+//= require bootstrap-scrollspy
+//= require bootstrap-modal
+//= require bootstrap-dropdown
+//= require bootstrap-alerts
+//= require bootstrap-tabs
+//= require bootstrap-popover
 //= require_self
-//= require_tree .
+
 
 function error(msg) {
  var s = document.querySelector('#status');
@@ -18,9 +27,8 @@ function error(msg) {
 }
 
 $(function(){        
-  var $container = $('.posts');
-  $container.imagesLoaded(function(){
-    $container.masonry({
+  $('.posts').imagesLoaded(function(){
+    $('.posts').masonry({
       itemSelector : '.item',
       columnWidth : 240
     });

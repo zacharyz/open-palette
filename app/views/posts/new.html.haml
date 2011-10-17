@@ -28,9 +28,14 @@
           = f.label :content, "Description"
           .input
             = f.text_area :content, :class=>"xlarge", :rows=>"3"
-            <span class="help-block"> Provide a description for your picture. </span>
+            .help-block Provide a description for your picture. 
+        .clearfix
+          = f.label :tag_list, "Tags"
+          .input
+            = f.text_field :tag_list
+            .help-block Tags help categorize the posts. Separate tags with commas. 
         .actions
-          = f.submit "Submit", :class=>"btn primary"
           = f.submit "Cancel", :class=>"btn"
+          = f.submit "Submit", :class=>"btn primary"
     
 

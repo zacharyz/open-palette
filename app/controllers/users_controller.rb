@@ -74,11 +74,11 @@ class UsersController < ApplicationController
   end
   
   def hearts
-    @title = "Hearts"
+    @title = "#{current_user.name}'s favorites"
     @user = User.find(params[:id])
     #@posts = @user.hearted.paginate(:page => params[:page])
     @posts = @user.hearted.page(params[:page])
-    render 'show_heart'
+    render :show
   end                  
   
   private
