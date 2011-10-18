@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_filter :authenticate, :except => [:show, :new, :create]
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
-  before_filter :new_post, :except => :destroy
   
   def index
     @title = "All users"
@@ -82,10 +81,6 @@ class UsersController < ApplicationController
   end                  
   
   private
-
-    def new_post
-      @new_post = Post.new
-    end
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)

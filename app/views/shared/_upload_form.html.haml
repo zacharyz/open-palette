@@ -1,4 +1,4 @@
-= form_for @new_post, :html=>{:multipart =>true}, :remote=>true do |f|
+= form_for Post.new, :html=>{:multipart =>true}, :remote=>true do |f|
   .modal-header 
     %a.close{:href=>"#"} &times;
     %h3 New Post

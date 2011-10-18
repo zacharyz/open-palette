@@ -39,8 +39,17 @@ $(function(){
       columnWidth : 40
     });
   });  
-  
-});
-               
+  $('.post').popover({
+    offset: 0,
+	html: true,
+	animate: true,
+	placement: 'right'
+  }) 
+  .click(function(e) {
+    e.preventDefault()
+  })
+});                           
+
+
 
 

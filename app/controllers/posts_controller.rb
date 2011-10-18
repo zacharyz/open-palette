@@ -1,16 +1,16 @@
 class PostsController < ApplicationController 
   before_filter :authenticate, :only => [:create, :destroy]
   before_filter :authorized_user, :only => :destroy
-  before_filter :new_post, :except => :destroy
   # GET /posts
   # GET /posts.xml
   def index
     @tags = Post.tag_counts_on(:tags).limit(15).sort_by(&:count).reverse
     if signed_in?
       @title = "Hey #{current_user.name}, here are some posts"
+      #@posts = current_user.feed.page(params[:page]).per(18)                             
       @posts = current_user.feed.page(params[:page]).per(18)                             
-      @new_post = Post.new
     else
+      #@posts = Post.page(params[:page]).per(18) 
       @posts = Post.page(params[:page]).per(18) 
     end
 
@@ -33,7 +33,6 @@ class PostsController < ApplicationController
   # GET /posts/new.xml
   def new
     @post = Post.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @post }
@@ -96,7 +95,7 @@ class PostsController < ApplicationController
   end
   
   def hearts
-    @title = "Hearts"
+    @title = "Favorites"
     @post = Post.find(params[:id])
     #@users = @post.hearters.paginate(:page => params[:page])
     @users = @post.hearters.page(params[:page])
@@ -116,9 +115,6 @@ class PostsController < ApplicationController
     end  
   end
   private
-    def new_post
-      @new_post = Post.new
-    end
     def authorized_user
       @post = Post.find(params[:id])
       redirect_to root_path unless current_user?(@post.user)
