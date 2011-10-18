@@ -45,9 +45,6 @@ $(function(){
 	animate: true,
 	placement: 'right'
   }) 
-  .click(function(e) {
-    e.preventDefault()
-  })
 });                           
 
 
