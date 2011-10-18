@@ -8,5 +8,13 @@ $(function(){
       columnWidth : 240
     });
   });  
-  
+  $('.post').popover({
+    offset: 0,
+	html: true,
+	animate: true,
+	placement: 'right'
+  }) 
+  .click(function(e) {
+    e.preventDefault()
+  })
 });
