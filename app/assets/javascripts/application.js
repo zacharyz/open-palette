@@ -45,6 +45,16 @@ $(function(){
 	animate: true,
 	placement: 'right'
   }) 
+  $('.user').twipsy({
+    live: true,
+	placement: 'right',
+	offset: 0  
+  })
+  $("a[rel=twipsy]").twipsy({
+    live: true,
+	placement: 'below',
+	offset: 5  
+  })
 });                           
 
 
