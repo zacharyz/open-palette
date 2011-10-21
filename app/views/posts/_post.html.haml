@@ -1,3 +1,3 @@
 %li
-  = link_to image_tag(post.image_url(:thumb).to_s, :alt=> post.title,:class => "thumbnail", :alt=> post.title),post_path(post),:class=>"post",:title=> post.title, :"data-content" => "by <strong>#{post.user.name}</strong> - #{pluralize(post.hearts.count, 'like')}"
+  = link_to image_tag(post.image_url(:thumb).to_s, :alt=> post.title,:class => "thumbnail", :alt=> post.title),post_path(post),:class=>"post",:title=> post.title, :"data-content" => "#{gravatar_for(post.user, :size => 48)} <strong>#{post.user.name}</strong> - #{pluralize(post.hearts.count, 'like')}"
                

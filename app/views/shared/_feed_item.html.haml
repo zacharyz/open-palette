@@ -1,2 +1,2 @@
 %li
-  = link_to image_tag(feed_item.image_url(:thumb) , :alt=> feed_item.title),post_path(feed_item), :class=>"post",:title=> feed_item.title, :"data-content" => "by <strong>#{feed_item.user.name}</strong> - #{pluralize(feed_item.hearts.count, 'like')}"
+  = link_to image_tag(feed_item.image_url(:thumb) , :alt=> feed_item.title),post_path(feed_item), :class=>"post",:title=> feed_item.title, :"data-content" => "#{gravatar_for(feed_item.user, :size => 48)} <strong>#{feed_item.user.name}</strong> - #{pluralize(feed_item.hearts.count, 'like')}"
