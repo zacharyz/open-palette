@@ -3,8 +3,8 @@ CarrierWave.configure do |config|
   config.cache_dir = 'carrierwave'
   config.fog_credentials = {
     :provider               => 'AWS',       # required
-    :aws_access_key_id      => 'AKIAJOFZFZZTBC473TPQ',       # required
-    :aws_secret_access_key  => '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',       # required
+    :aws_access_key_id      => '',       # required
+    :aws_secret_access_key  => '',       # required
   }
   config.fog_directory  = 'open-palette'                     # required
 end
